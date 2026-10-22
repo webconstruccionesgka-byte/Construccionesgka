@@ -42,7 +42,7 @@
 
     .topbar{
       background: #111;
-      padding: 14px 22px 12px;
+      padding: 14px 24px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -179,6 +179,7 @@
       gap: 10px;
       border: none;
       font-size: 16px;
+      cursor: pointer;
     }
 
     .hero-meta{
@@ -984,7 +985,7 @@
           </div>
 
           <div class="hero-cta">
-            <a href="https://wa.me/56953012409" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="btn-primary">
               <span>◉</span> cotizar por WhatsApp →
             </a>
           </div>
@@ -1131,7 +1132,7 @@
           <p>Completa tus datos y te contactaremos para asesorarte sin costo.</p>
         </div>
 
-        <form class="quote-form" action="mailto:construccionesgka@gmail.com" method="post" enctype="text/plain">
+        <form id="cotizacionForm" class="quote-form">
           <div class="field">
             <label for="nombre">Nombre</label>
             <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
@@ -1186,7 +1187,7 @@
       <div class="inner">
         <span class="small">¿Listo para remodelar tu hogar en Santiago?</span>
         <span class="sub">Hablemos de tu proyecto hoy mismo. Atención personalizada y presupuesto gratuito.</span>
-        <a href="https://wa.me/56953012409" target="_blank" rel="noopener noreferrer" class="whats">
+        <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="whats">
           <span>◉</span> Hablar por WhatsApp
         </a>
       </div>
@@ -1245,6 +1246,40 @@
       });
 
       updateSlider(range.value);
+    });
+
+    document.getElementById("cotizacionForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const servicio = document.getElementById("servicio").value.trim();
+      const ciudad = document.getElementById("ciudad").value.trim();
+      const presupuesto = document.getElementById("presupuesto").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      const text = [
+        "Hola GKA Construcciones, quiero cotizar un proyecto.",
+        "",
+        "Nombre: " + (nombre || "-"),
+        "Teléfono: " + (telefono || "-"),
+        "Correo: " + (email || "-"),
+        "Servicio: " + (servicio || "-"),
+        "Ciudad: " + (ciudad || "-"),
+        "Presupuesto estimado: " + (presupuesto || "-"),
+        "Mensaje: " + (mensaje || "-")
+      ].join("%0A");
+
+      const whatsappUrl = "https://wa.me/56953012409?text=" + encodeURIComponent(text);
+      const mailtoUrl = "mailto:construccionesgka@gmail.com?subject=Cotización%20GKA%20Construcciones&body=" + encodeURIComponent(text);
+
+      const shouldSendToWhatsApp = confirm("¿Quieres enviar la cotización por WhatsApp?");
+      if (shouldSendToWhatsApp) {
+        window.open(whatsappUrl, "_blank");
+      } else {
+        window.location.href = mailtoUrl;
+      }
     });
   </script>
 </body>
