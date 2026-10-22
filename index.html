@@ -6,38 +6,38 @@
   <title>GKA Construcciones</title>
   <style>
     :root{
-      --bg: #dfe2e7;
-      --black: #101010;
-      --dark: #171717;
-      --gold: #f3c316;
-      --gold-2: #e0b000;
+      --bg: #dfe1e4;
+      --black: #0e0e0e;
+      --dark: #161616;
+      --dark-2: #111111;
+      --gold: #f4c11a;
+      --gold-2: #e6b70d;
       --text: #ffffff;
-      --muted: #a9a9a9;
-      --light: #f4f4f4;
-      --panel: #ffffff;
-      --input: #f7f7f7;
-      --blue: #0d3f8b;
-      --shadow: 0 14px 32px rgba(0,0,0,.12);
+      --muted: #a7a7a7;
+      --light: #f3f3f3;
+      --soft: #efefef;
+      --input: #f5f5f5;
+      --blue: #0a3c8c;
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
     body{
       margin: 0;
       background: var(--bg);
-      color: #111;
       font-family: Arial, Helvetica, sans-serif;
+      color: #111;
     }
 
-    a { text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    input, select, textarea, button { font: inherit; }
+    a{ text-decoration: none; }
+    img{ display: block; max-width: 100%; }
 
     .page{
       width: min(1280px, calc(100% - 20px));
       margin: 18px auto;
       background: #fff;
-      box-shadow: 0 10px 28px rgba(0,0,0,.12);
+      box-shadow: 0 8px 20px rgba(0,0,0,.12);
     }
 
     .topbar{
@@ -53,45 +53,47 @@
     .brand{
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       gap: 14px;
       min-width: 260px;
     }
 
-    .brand-mark{
+    .logo-wrap{
       width: 250px;
       min-width: 250px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      padding: 0;
     }
 
-    .brand-mark svg{
+    .logo-img{
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
+      object-fit: contain;
+      max-height: 90px;
     }
 
     .brand-text{
       display: flex;
       flex-direction: column;
       line-height: 0.9;
-      color: #fff;
       text-transform: uppercase;
       font-weight: 900;
+      color: #fff;
       letter-spacing: -0.05em;
     }
 
     .brand-line{
       display: block;
-      font-size: 30px;
+      font-size: 26px;
       color: #fff;
     }
 
     .brand-line.small{
       font-size: 16px;
-      letter-spacing: 0.08em;
-      margin-top: 4px;
+      letter-spacing: 0.06em;
+      margin-top: 3px;
       color: #fff;
     }
 
@@ -166,7 +168,7 @@
 
     .hero-copy h1{
       margin: 0;
-      max-width: 700px;
+      max-width: 680px;
       color: #fff;
       text-transform: uppercase;
       font-size: clamp(2.8rem, 4vw, 5rem);
@@ -177,7 +179,7 @@
 
     .hero-copy .sub{
       margin-top: 24px;
-      max-width: 620px;
+      max-width: 610px;
       color: #d9d9d9;
       font-size: 18px;
       line-height: 1.5;
@@ -194,20 +196,19 @@
     .btn-primary{
       background: var(--gold);
       color: #111;
-      font-weight: 800;
       border-radius: 12px;
       padding: 14px 22px;
+      font-weight: 800;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      border: none;
       font-size: 16px;
     }
 
     .hero-meta{
       display: flex;
       flex-wrap: wrap;
-      gap: 18px 20px;
+      gap: 16px 20px;
       margin-top: 26px;
       color: #d7d7d7;
       font-size: 12px;
@@ -242,7 +243,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(120px, 1fr));
       gap: 14px;
-      padding-right: 10px;
+      padding-right: 6px;
     }
 
     .tile{
@@ -259,7 +260,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.08));
+      background: linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,.1));
     }
 
     .tile span{
@@ -284,7 +285,7 @@
     .beforeafter-inner{
       background: #f5f5f5;
       text-align: center;
-      padding: 10px 0 0;
+      padding: 6px 0 0;
     }
 
     .beforeafter-title{
@@ -453,9 +454,10 @@
       text-align: center;
       letter-spacing: -0.06em;
       color: #fff;
-      margin: 0 auto;
+      margin: 0;
       display: block;
       width: max-content;
+      margin: 0 auto;
       position: relative;
     }
 
@@ -583,7 +585,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,.04), rgba(0,0,0,.46));
+      background: linear-gradient(to bottom, rgba(0,0,0,.04), rgba(0,0,0,.48));
     }
 
     .social-card .meta{
@@ -911,8 +913,8 @@
       }
 
       .hero-copy{
-        padding-left: 0;
         text-align: center;
+        padding-left: 0;
       }
 
       .hero-copy h1{
@@ -932,7 +934,7 @@
         justify-content: center;
       }
 
-      .collage{
+      .service-grid{
         max-width: 620px;
         margin: 0 auto;
       }
@@ -963,6 +965,10 @@
         padding: 16px 14px;
       }
 
+      .brand{
+        width: 100%;
+      }
+
       .brand-text{
         display: none;
       }
@@ -988,12 +994,12 @@
         font-size: 15px;
       }
 
-      .collage{
+      .service-grid{
         grid-template-columns: repeat(2, minmax(120px, 1fr));
       }
 
-      .tile{
-        min-height: 150px;
+      .service-card{
+        height: 150px;
       }
 
       .slicer{
@@ -1022,32 +1028,8 @@
   <div class="page">
     <header class="topbar">
       <div class="brand">
-        <div class="brand-mark" aria-label="GKA Construcciones logo">
-          <svg viewBox="0 0 520 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo GKA Construcciones">
-            <defs>
-              <pattern id="brickPattern" width="22" height="14" patternUnits="userSpaceOnUse">
-                <rect width="22" height="14" fill="#e81b1b"/>
-                <path d="M0 0H22V14H0Z" fill="none" stroke="#efefef" stroke-width="1" opacity="0.18"/>
-                <path d="M0 7H22 M11 0V14" stroke="#d01010" stroke-width="1"/>
-              </pattern>
-            </defs>
-
-            <g transform="translate(0 8)">
-              <g transform="translate(8 0)">
-                <path d="M35 128 L148 30 L260 128 Z" fill="#ffffff"/>
-                <path d="M95 63 L148 30 L201 63 Z" fill="#ffffff"/>
-                <path d="M46 128 L103 74 L103 128 Z" fill="#ffffff"/>
-                <path d="M192 74 L249 128 L192 128 Z" fill="#ffffff"/>
-                <rect x="48" y="80" width="198" height="48" fill="url(#brickPattern)"/>
-                <rect x="101" y="98" width="16" height="16" fill="#ffffff"/>
-                <rect x="150" y="98" width="16" height="16" fill="#ffffff"/>
-                <rect x="199" y="98" width="16" height="16" fill="#ffffff"/>
-              </g>
-
-              <text x="285" y="118" font-size="118" font-weight="900" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" letter-spacing="-8">GKA</text>
-              <text x="292" y="160" font-size="34" font-weight="800" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" letter-spacing="2">CONSTRUCCIONES</text>
-            </g>
-          </svg>
+        <div class="logo-wrap">
+          <img src="logo-gka.png" alt="GKA Construcciones" class="logo-img">
         </div>
 
         <div class="brand-text">
