@@ -1,257 +1,911 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constructora GKA - Construcción y Remodelación</title>
-    <!-- Enlace de contingencia para Bootstrap -->
-    <link rel="stylesheet" href="https://bootstrapcdn.com">
-    <link href="https://jsdelivr.net" rel="stylesheet">
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constructora GKA - Construcción y Remodelación</title>
-    <!-- Bootstrap 5 CSS Oficial -->
-    <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://jsdelivr.net">
-    
-    <style>
-        :root {
-            --primary-color: #FBC107; /* Amarillo corporativo de la foto */
-            --dark-bg: #0D0D0D;       /* Fondo negro puro */
-            --card-bg: #141414;       /* Tarjetas gris oscuro */
-            --border-color: #262626;
-        }
-        
-        body {
-            background-color: var(--dark-bg) !important;
-            color: #ffffff !important;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constructora GKA</title>
+  <style>
+    :root{
+      --bg-gray: #dfe0e2;
+      --black: #0d0d0d;
+      --black-2: #101010;
+      --dark-panel: #101010;
+      --gold: #f5c40d;
+      --gold-2: #e9b700;
+      --text: #ffffff;
+      --muted: #a7a7a7;
+      --light-bg: #f3f3f3;
+      --border: rgba(255,255,255,.08);
+      --card-border: rgba(0,0,0,.08);
+    }
 
-        /* Ajustes de visibilidad móvil y tablet */
-        .navbar, section, footer {
-            display: block !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
+    * { box-sizing: border-box; }
 
-        .navbar {
-            background-color: #000000 !important;
-            border-bottom: 1px solid var(--border-color);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .navbar-brand {
-            color: #ffffff !important;
-        }
+    body{
+      margin: 0;
+      background: var(--bg-gray);
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+    }
 
-        .nav-link {
-            color: #e0e0e0 !important;
-        }
-        
-        .nav-link.active {
-            color: var(--primary-color) !important;
-        }
+    a{
+      text-decoration: none;
+    }
 
-        .btn-whatsapp {
-            background-color: var(--primary-color) !important;
-            color: #000000 !important;
-            font-weight: 700;
-            border-radius: 4px;
-            padding: 8px 18px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            border: none;
-            text-decoration: none;
-            display: inline-block;
-        }
+    .page{
+      max-width: 1280px;
+      margin: 22px auto;
+      background: #ffffff;
+      box-shadow: 0 4px 18px rgba(0,0,0,.10);
+    }
 
-        .hero-section {
-            padding: 60px 0;
-            background-color: var(--dark-bg);
-        }
+    .topbar{
+      background: #111;
+      padding: 18px 26px 15px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
 
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-        }
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
+    .brand-mark{
+      width: 52px;
+      height: 52px;
+      background: var(--gold);
+      border-radius: 14px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+    }
 
-        /* Bloque de Antes y Después */
-        .ba-box {
-            background: #111;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 15px;
-        }
+    .brand-mark::before,
+    .brand-mark::after{
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 3px solid #111;
+      border-radius: 10px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
 
-        .ba-badge-antes {
-            background-color: var(--primary-color);
-            color: #000;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 3px;
-            font-size: 0.8rem;
-        }
+    .brand-mark .mini{
+      position: relative;
+      z-index: 1;
+      width: 20px;
+      height: 20px;
+      background: #111;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
 
-        .ba-badge-despues {
-            background-color: #ffffff;
-            color: #000;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 3px;
-            font-size: 0.8rem;
-        }
+    .brand-text{
+      font-weight: 900;
+      line-height: 1;
+      color: #fff;
+      letter-spacing: 0.02em;
+      font-size: 19px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-        /* Tarjetas del portafolio */
-        .project-card {
-            background-color: var(--card-bg) !important;
-            border: 1px solid var(--border-color) !important;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-        }
+    .brand-text span{
+      display: block;
+      color: var(--gold);
+      font-size: 20px;
+      letter-spacing: 0.08em;
+    }
 
-        .project-card img {
-            border-radius: 6px;
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
+    .nav{
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        .text-warning-custom {
-            color: var(--primary-color) !important;
-        }
+    .nav a{
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      opacity: .9;
+    }
 
-        /* Caja de llamado a la acción inferior */
-        .cta-yellow-box {
-            background-color: var(--primary-color) !important;
-            color: #000000 !important;
-            border-radius: 6px;
-            padding: 35px 20px;
-            text-align: center;
-        }
+    .nav a:hover{
+      color: var(--gold);
+    }
 
-        .cta-yellow-box h2 {
-            font-weight: 800;
-            font-size: 1.8rem;
-        }
+    .btn-whatsapp{
+      background: var(--gold);
+      color: #111;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 10px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid rgba(0,0,0,.2);
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,.08);
+    }
 
-        .btn-cta-dark {
-            background-color: #000000 !important;
-            color: #ffffff !important;
-            font-weight: 700;
-            padding: 12px 25px;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-        }
+    .btn-whatsapp .icon{
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #111;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 900;
+    }
 
-        footer {
-            background-color: #050505;
-            border-top: 1px solid var(--border-color);
-            color: #888888;
-            font-size: 0.85rem;
-        }
-    </style>
+    .hero{
+      background: #111;
+      color: var(--text);
+      padding: 0 0 0 0;
+      position: relative;
+    }
+
+    .hero-inner{
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      min-height: 520px;
+      padding: 0 22px 0 22px;
+      gap: 20px;
+    }
+
+    .hero-copy{
+      padding: 28px 0 18px 18px;
+    }
+
+    .hero-copy h1{
+      margin: 0;
+      font-size: clamp(2.7rem, 3vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.08em;
+      font-weight: 900;
+      max-width: 640px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .hero-copy .sub{
+      margin-top: 22px;
+      max-width: 600px;
+      color: #d8d8d8;
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-cta{
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary{
+      background: var(--gold);
+      color: #111;
+      font-weight: 800;
+      border-radius: 12px;
+      padding: 14px 22px;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+    }
+
+    .hero-meta{
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 22px;
+      color: #d5d5d5;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .hero-meta .item{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .hero-meta .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    .hero-visual{
+      position: relative;
+      padding: 0 0 0 0;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .hero-photo{
+      width: 100%;
+      height: 88%;
+      min-height: 350px;
+      background-image:
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      border-radius: 0;
+      display: block;
+      filter: saturate(0.8) contrast(1.05);
+    }
+
+    .beforeafter{
+      background: #f4f4f3;
+      padding: 18px 18px 10px;
+      border-top: 1px solid rgba(0,0,0,.03);
+    }
+
+    .beforeafter-inner{
+      background: #f4f4f3;
+      text-align: center;
+      padding: 8px 0 0;
+    }
+
+    .beforeafter-title{
+      display: inline-block;
+      font-size: clamp(2.2rem, 3vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      color: #111;
+      margin: 0;
+      position: relative;
+    }
+
+    .beforeafter-title::after{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      background: var(--gold);
+      margin: 8px auto 0;
+      border-radius: 4px;
+    }
+
+    .beforeafter-sub{
+      margin: 14px 0 0;
+      color: #4a4a4a;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .compare-wrap{
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      position: relative;
+      padding-bottom: 18px;
+    }
+
+    .compare-card{
+      position: relative;
+      width: 46%;
+      min-width: 260px;
+      max-width: 520px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 22px rgba(0,0,0,.08);
+      border: 1px solid rgba(0,0,0,.04);
+    }
+
+    .compare-card.before{
+      margin-right: 10px;
+    }
+
+    .compare-card.after{
+      margin-left: 10px;
+    }
+
+    .compare-label{
+      position: absolute;
+      top: 14px;
+      z-index: 3;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .compare-label.before{
+      left: 12px;
+      background: var(--gold);
+      color: #111;
+    }
+
+    .compare-label.after{
+      right: 12px;
+      background: #fff;
+      color: #111;
+    }
+
+    .compare-image{
+      width: 100%;
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+      display: block;
+    }
+
+    .arrow-mid{
+      position: relative;
+      z-index: 2;
+      width: 52px;
+      height: 52px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 900;
+      color: #111;
+      border: 2px solid rgba(0,0,0,.08);
+      margin: 0 -14px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.12);
+    }
+
+    .project-caption{
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #111;
+    }
+
+    .project-caption strong{
+      display: block;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .gallery{
+      background: #111;
+      color: white;
+      padding: 36px 18px 26px;
+    }
+
+    .gallery-title{
+      font-size: clamp(2.2rem, 3vw, 4rem);
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .gallery-title::after{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      background: var(--gold);
+      margin-top: 8px;
+      border-radius: 4px;
+    }
+
+    .gallery-sub{
+      text-align: center;
+      font-size: 16px;
+      color: #d5d5d5;
+      margin: 16px 0 24px;
+    }
+
+    .projects-grid{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project{
+      background: #111;
+      border-radius: 0;
+      overflow: hidden;
+      border: none;
+    }
+
+    .project .img{
+      width: 100%;
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      display: block;
+    }
+
+    .project .info{
+      background: #111;
+      padding: 14px 10px 18px;
+      text-align: left;
+    }
+
+    .project .name{
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      margin: 0 0 4px;
+      line-height: 1.2;
+    }
+
+    .project .detail{
+      color: #d7d7d7;
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .project .tag{
+      color: #111;
+      background: var(--gold);
+      display: inline-block;
+      padding: 6px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .cta-band{
+      background: var(--gold);
+      color: #111;
+      text-align: center;
+      padding: 18px 20px;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .cta-band .inner{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .cta-band .small{
+      font-size: 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+    }
+
+    .cta-band .sub{
+      font-size: 15px;
+      font-weight: 600;
+      opacity: .85;
+    }
+
+    .cta-band .whats{
+      background: #111;
+      color: var(--gold);
+      border-radius: 30px;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid rgba(0,0,0,.12);
+    }
+
+    .footer{
+      background: #111;
+      color: #d0d0d0;
+      padding: 26px 18px 18px;
+      border-top: 1px solid rgba(255,255,255,.04);
+    }
+
+    .footer-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1.1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .footer-brand{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand-mark{
+      width: 38px;
+      height: 38px;
+      background: var(--gold);
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .footer-brand-mark::before{
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 2px solid #111;
+      border-radius: 7px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    .footer-brand-text{
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .footer-copy{
+      font-size: 14px;
+      color: #b8b8b8;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    .footer-title{
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      margin: 0 0 10px;
+      text-transform: uppercase;
+    }
+
+    .footer-list{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: #d5d5d5;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .footer-list a{
+      color: #d5d5d5;
+    }
+
+    .footer-list a:hover{
+      color: var(--gold);
+    }
+
+    .bottom-line{
+      max-width: 1100px;
+      margin: 18px auto 0;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      text-align: center;
+      color: #b5b5b5;
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px){
+      .topbar{
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .brand{
+        width: 100%;
+      }
+
+      .nav{
+        width: 100%;
+        justify-content: center;
+        order: 3;
+        flex-wrap: wrap;
+      }
+
+      .hero-inner{
+        grid-template-columns: 1fr;
+        padding: 0 20px 22px;
+      }
+
+      .hero-copy{
+        padding-left: 0;
+        text-align: center;
+      }
+
+      .hero-copy h1{
+        margin: 0 auto;
+      }
+
+      .hero-copy .sub{
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-cta{
+        justify-content: center;
+      }
+
+      .hero-meta{
+        justify-content: center;
+      }
+
+      .hero-visual{
+        min-height: 300px;
+      }
+
+      .compare-wrap{
+        flex-direction: column;
+      }
+
+      .arrow-mid{
+        margin: 10px 0;
+        transform: rotate(90deg);
+      }
+
+      .compare-card{
+        width: 100%;
+        max-width: 600px;
+      }
+
+      .projects-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px){
+      .topbar{
+        padding: 16px 14px;
+      }
+
+      .brand-text{
+        font-size: 15px;
+      }
+
+      .brand-text span{
+        font-size: 15px;
+      }
+
+      .nav{
+        gap: 12px 16px;
+      }
+
+      .nav a{
+        font-size: 11px;
+      }
+
+      .btn-whatsapp{
+        font-size: 12px;
+        padding: 9px 14px;
+      }
+
+      .hero-copy h1{
+        font-size: 2.5rem;
+      }
+
+      .hero-copy .sub{
+        font-size: 15px;
+      }
+
+      .compare-image{
+        height: 220px;
+      }
+
+      .gallery-title{
+        font-size: 2.2rem;
+      }
+
+      .cta-band .small{
+        font-size: 18px;
+      }
+
+      .cta-band .sub{
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">
+          <div class="mini"></div>
+        </div>
+        <div class="brand-text">
+          Constructora <span>GKA</span>
+        </div>
+      </div>
 
-    <!-- MENÚ PRINCIPAL -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <div class="bg-warning text-dark p-2 rounded me-2 fw-bold" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">GKA</div>
-                <div class="lh-1">
-                    <span class="fw-bold d-block small text-white" style="letter-spacing: 1px;">CONSTRUCTORA</span>
-                    <span class="fw-black text-warning-custom" style="font-size: 0.9rem;">GKA</span>
-                </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a href="https://wa.me/56912345678" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+        <span class="icon">W</span>
+        cotizar por WhatsApp
+      </a>
+    </header>
+
+    <section id="inicio" class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1>Construimos y <br> remodelamos en <br> Santiago</h1>
+
+          <div class="sub">
+            Reformas, remodelaciones y construcción en Santiago de Chile.<br>
+            Calidad, confianza y plazos cumpliendo.
+          </div>
+
+          <div class="hero-cta">
+            <a href="https://wa.me/56912345678" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <span>◉</span> cotizar por WhatsApp →
             </a>
-            <div class="ms-auto">
-                <a class="btn-whatsapp" href="https://wa.me" target="_blank">
-                    <i class="bi bi-whatsapp me-1"></i> cotizar por WhatsApp
-                </a>
-            </div>
-        </div>
-    </nav>
+          </div>
 
-    <!-- SECCIÓN DE BIENVENIDA (HERO) -->
-    <section class="hero-section">
-        <div class="container text-center text-lg-start">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-7">
-                    <h1 class="hero-title mb-3">CONSTRUIMOS Y REMODELAMOS EN SANTIAGO</h1>
-                    <p class="text-secondary fs-5 mb-4">Reformas, remodelaciones y construcción en Santiago de Chile. Calidad, confianza y plazos cumpliendo.</p>
-                    <a href="https://wa.me" target="_blank" class="btn-whatsapp py-3 px-4 fs-6">
-                        cotizar por WhatsApp &rarr;
-                    </a>
-                    
-                    <div class="row g-2 mt-4 pt-3 border-top border-secondary text-secondary small text-start justify-content-center justify-content-lg-start">
-                        <div class="col-auto me-3"><i class="bi bi-patch-check-fill text-warning-custom"></i> +10 años de experiencia</div>
-                        <div class="col-auto me-3"><i class="bi bi-shield-fill-check text-warning-custom"></i> Garantía de trabajo</div>
-                        <div class="col-auto"><i class="bi bi-file-earmark-text-fill text-warning-custom"></i> Presupuestos sin costo</div>
-                    </div>
-                </div>
-                <div class="col-lg-5 text-center">
-                    <img src="https://unsplash.com" alt="Obra" class="img-fluid rounded border border-dark shadow">
-                </div>
-            </div>
+          <div class="hero-meta">
+            <div class="item"><span class="dot"></span> +10 años de experiencia</div>
+            <div class="item"><span class="dot"></span> Garantía de trabajo</div>
+            <div class="item"><span class="dot"></span> Presupuestos sin costo</div>
+          </div>
         </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo" aria-label="Trabajo de remodelación"></div>
+        </div>
+      </div>
     </section>
 
-    <!-- SECCIÓN ANTES & DESPUÉS -->
-    <section class="py-5 bg-black border-top border-bottom border-dark">
-        <div class="container text-center">
-            <h2 class="section-title mb-1">ANTES & DESPUÉS</h2>
-            <p class="text-secondary small mb-4">Mira la transformación real de nuestros proyectos</p>
-            
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-8">
-                    <div class="ba-box shadow-sm mb-3">
-                        <div class="row g-2">
-                            <div class="col-6 position-relative">
-                                <span class="position-absolute top-0 start-0 m-2 ba-badge-antes">Antes</span>
-                                <img src="https://unsplash.com" class="img-fluid rounded" alt="Cocina Vieja" style="height:250px; width:100%; object-fit:cover;">
-                            </div>
-                            <div class="col-6 position-relative">
-                                <span class="position-absolute top-0 end-0 m-2 ba-badge-despues">Después</span>
-                                <img src="https://unsplash.com" class="img-fluid rounded" alt="Cocina Nueva" style="height:250px; width:100%; object-fit:cover;">
-                            </div>
-                        </div>
-                    </div>
-                    <h6 class="fw-bold text-white mb-0">Remodelación completa</h6>
-                    <p class="text-secondary small">Casa en Las Condes, Santiago</p>
-                </div>
-            </div>
+    <section class="beforeafter" id="servicios">
+      <div class="beforeafter-inner">
+        <h2 class="beforeafter-title">Antes &amp; Después</h2>
+        <p class="beforeafter-sub">Mira la transformación real de nuestros proyectos</p>
+
+        <div class="compare-wrap">
+          <div class="compare-card before">
+            <span class="compare-label before">Antes</span>
+            <div class="compare-image" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80');"></div>
+          </div>
+
+          <div class="arrow-mid">→</div>
+
+          <div class="compare-card after">
+            <span class="compare-label after">Después</span>
+            <div class="compare-image" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');"></div>
+          </div>
         </div>
+
+        <div class="project-caption">
+          <strong>Remodelación completa</strong>
+          Casa en Las Condes, Santiago
+        </div>
+      </div>
     </section>
 
-    <!-- GALERÍA DE PROYECTOS -->
-    <section class="py-5">
-        <div class="container text-center">
-            <h2 class="section-title mb-1">GALERÍA DE PROYECTOS</h2>
-            <p class="text-secondary small mb-5">Algunos de nuestros trabajos realizados en Santiago</p>
-            
-            <div class="row g-4 text-start">
-                <!-- Tarjeta 1 -->
-                <div class="col-md-4">
-                    <div class="project-card">
-                        <img src="https://unsplash.com" alt="Cocina Moderna">
-                        <h5 class="fw-bold mb-1 text-white">Cocina Moderna</h5>
-                        <p class="text-warning-custom small mb-2">Providencia</p>
-                        <p class="text-secondary small mb-0">Remodelación integral • 45m²</p>
-                    </div>
-                </div>
-                <!-- Tarjeta 2 -->
+    <section class="gallery" id="proyectos">
+      <h2 class="gallery-title">Galería de Proyectos</h2>
+      <p class="gallery-sub">Algunos de nuestros trabajos realizados en Santiago</p>
+
+      <div class="projects-grid">
+        <article class="project">
+          <div class="img" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="info">
+            <div class="tag">Cocina</div>
+            <h3 class="name">Cocina Moderna</h3>
+            <p class="detail">Providencia<br>Remodelación integral • 45m²</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="img" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="info">
+            <div class="tag">Baño</div>
+            <h3 class="name">Baño Diseño</h3>
+            <p class="detail">Ñuñoa<br>Renovación baño • 8m²</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="img" style="background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="info">
+            <div class="tag">Living</div>
+            <h3 class="name">Living &amp; Terraza</h3>
+            <p class="detail">La Reina<br>Ampliación y remodelación • 60m²</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="cta-band" id="contacto">
+      <div class="inner">
+        <span class="small">¿Listo para remodelar tu hogar en Santiago?</span>
+        <span class="sub">Hablemos de tu proyecto hoy mismo. Atención personalizada y presupuesto gratuito.</span>
+        <a href="https://wa.me/56912345678" target="_blank" rel="noopener noreferrer" class="whats">
+          <span>◉</span> Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer" id="nosotros">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <div class="footer-brand-mark"></div>
+            <div class="footer-brand-text">Constructora<br>GKA</div>
+          </div>
+          <div class="footer-copy">
+            +10 años de experiencia en reformas y construcciones para hogares y negocios en Santiago.
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Contacto</h3>
+          <ul class="footer-list">
+            <li>Santiago, Chile • Región Metropolitana</li>
+            <li>contacto@constructora-gka.cl</li>
+            <li>+56 9 1234 5678</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Horario</h3>
+          <ul class="footer-list">
+            <li>Lun - Vie: 9:00 - 18:00</li>
+            <li>Sáb: 9:00 - 13:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-line">
+        © 2024 Constructora Santiago — Todos los derechos reservados | Políticas de privacidad
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
