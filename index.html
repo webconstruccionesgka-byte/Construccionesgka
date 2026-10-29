@@ -85,8 +85,8 @@
       color: #fff;
       font-size: 15px;
       font-weight: 800;
-      text-transform: uppercase;
       letter-spacing: .04em;
+      text-transform: uppercase;
     }
 
     .nav a:hover{
@@ -130,8 +130,8 @@
 
     .hero-inner{
       display: grid;
-      grid-template-columns: 1.12fr 1fr;
-      min-height: 520px;
+      grid-template-columns: 1.1fr 1fr;
+      min-height: 500px;
       gap: 22px;
       align-items: center;
       padding: 0 18px;
@@ -323,7 +323,7 @@
       overflow: hidden;
       background: #ddd;
       box-shadow: var(--soft-shadow);
-      border: 1px solid rgba(0,0,0,.06);
+      border: 1px solid rgba(0,0,0,.04);
     }
 
     .compare-slider .before,
@@ -332,6 +332,7 @@
       inset: 0;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
     }
 
     .compare-slider .before{ z-index: 1; }
@@ -345,59 +346,11 @@
       top: 0;
       bottom: 0;
       left: 50%;
-      width: 3px;
-      background: rgba(255,255,255,.92);
-      z-index: 4;
+      width: 2px;
+      background: rgba(255,255,255,.9);
+      z-index: 3;
       transform: translateX(-50%);
-      box-shadow: 0 0 0 1px rgba(0,0,0,.12);
-    }
-
-    .compare-slider .divider::before{
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.96);
-      transform: translate(-50%, -50%);
-      box-shadow: 0 4px 10px rgba(0,0,0,.18);
-    }
-
-    .compare-slider .divider::after{
-      content: "↔";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 17px;
-      font-weight: 900;
-      color: #111;
-    }
-
-    .tag{
-      position: absolute;
-      top: 12px;
-      z-index: 5;
-      padding: 7px 12px;
-      border-radius: 8px;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-    }
-
-    .tag.before{
-      left: 12px;
-      background: var(--gold);
-      color: #111;
-    }
-
-    .tag.after{
-      right: 12px;
-      background: #fff;
-      color: #111;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.08);
     }
 
     .compare-slider input[type="range"]{
@@ -407,57 +360,7 @@
       height: 100%;
       opacity: 0;
       cursor: ew-resize;
-      z-index: 6;
-    }
-
-    .gallery-section{
-      background: #111;
-      color: #fff;
-      padding: 36px 18px 28px;
-    }
-
-    .gallery-section .section-head p{
-      color: #d6d6d6;
-    }
-
-    .gallery-grid{
-      max-width: 1180px;
-      margin: 28px auto 0;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .gallery-card{
-      background: #111;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 12px 24px rgba(0,0,0,.12);
-    }
-
-    .gallery-card .image{
-      height: 220px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .gallery-card .meta{
-      padding: 14px 12px 16px;
-    }
-
-    .gallery-card h3{
-      margin: 0 0 8px;
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: -.03em;
-    }
-
-    .gallery-card p{
-      margin: 0;
-      color: #d3d3d3;
-      font-size: 13px;
-      line-height: 1.5;
+      z-index: 5;
     }
 
     .quote-section{
@@ -658,17 +561,7 @@
     }
 
     @media (max-width: 1100px){
-      .compare-grid{
-        grid-template-columns: repeat(2, minmax(260px, 1fr));
-      }
-
-      .gallery-grid{
-        grid-template-columns: repeat(2, minmax(220px, 1fr));
-      }
-
-      .footer-inner{
-        grid-template-columns: 1fr;
-      }
+      .compare-grid{ grid-template-columns: repeat(2, minmax(260px, 1fr)); }
     }
 
     @media (max-width: 900px){
@@ -682,69 +575,23 @@
         padding-left: 0;
       }
 
-      .hero-copy h1{
-        margin: 0 auto;
-      }
-
-      .hero-copy .sub{
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-actions{
-        justify-content: center;
-      }
-
-      .hero-meta{
-        justify-content: center;
-      }
-
-      .topbar{
-        flex-wrap: wrap;
-      }
-
-      .nav{
-        width: 100%;
-      }
+      .hero-copy h1{ margin: 0 auto; }
+      .hero-copy .sub{ margin-left: auto; margin-right: auto; }
+      .hero-actions{ justify-content: center; }
+      .hero-meta{ justify-content: center; }
+      .topbar{ flex-wrap: wrap; }
+      .nav{ width: 100%; }
     }
 
     @media (max-width: 600px){
-      .topbar{
-        padding: 14px 12px;
-      }
-
-      .brand-mark{
-        width: 240px;
-      }
-
-      .nav{
-        gap: 12px 16px;
-      }
-
-      .nav a{
-        font-size: 11px;
-      }
-
-      .header-btn{
-        font-size: 11px;
-        padding: 8px 14px;
-      }
-
-      .compare-grid{
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid{
-        grid-template-columns: 1fr;
-      }
-
-      .quote-form{
-        grid-template-columns: 1fr;
-      }
-
-      .cta-band .inner{
-        flex-direction: column;
-      }
+      .topbar{ padding: 14px 12px; }
+      .brand-mark{ width: 240px; }
+      .nav{ gap: 12px 16px; }
+      .nav a{ font-size: 11px; }
+      .header-btn{ font-size: 11px; padding: 8px 14px; }
+      .compare-grid{ grid-template-columns: 1fr; }
+      .quote-form{ grid-template-columns: 1fr; }
+      .cta-band .inner{ flex-direction: column; }
     }
   </style>
 </head>
@@ -799,18 +646,10 @@
 
         <div class="hero-visual">
           <div class="hero-grid">
-            <div class="service-card" style="background-image:url('antes1.jpeg');">
-              <span>Obra gruesa</span>
-            </div>
-            <div class="service-card" style="background-image:url('antes2.jpeg');">
-              <span>Estructuras metálicas</span>
-            </div>
-            <div class="service-card" style="background-image:url('antes3.jpeg');">
-              <span>Instalaciones</span>
-            </div>
-            <div class="service-card" style="background-image:url('antes4.jpeg');">
-              <span>Remodelaciones</span>
-            </div>
+            <div class="service-card" style="background-image:url('antes1.jpeg');"></div>
+            <div class="service-card" style="background-image:url('antes2.jpeg');"></div>
+            <div class="service-card" style="background-image:url('antes3.jpeg');"></div>
+            <div class="service-card" style="background-image:url('antes4.jpeg');"></div>
           </div>
         </div>
       </div>
@@ -828,8 +667,6 @@
             <div class="before" style="background-image:url('antes1.jpeg');"></div>
             <div class="after" style="background-image:url('despues1.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="50" aria-label="Antes y después 1">
           </div>
         </div>
@@ -839,8 +676,6 @@
             <div class="before" style="background-image:url('antes2.jpeg');"></div>
             <div class="after" style="background-image:url('despues2.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="52" aria-label="Antes y después 2">
           </div>
         </div>
@@ -850,8 +685,6 @@
             <div class="before" style="background-image:url('antes3.jpeg');"></div>
             <div class="after" style="background-image:url('despues3.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="54" aria-label="Antes y después 3">
           </div>
         </div>
@@ -861,8 +694,6 @@
             <div class="before" style="background-image:url('antes4.jpeg');"></div>
             <div class="after" style="background-image:url('despues4.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="58" aria-label="Antes y después 4">
           </div>
         </div>
@@ -872,8 +703,6 @@
             <div class="before" style="background-image:url('antes5.jpeg');"></div>
             <div class="after" style="background-image:url('despues5.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="60" aria-label="Antes y después 5">
           </div>
         </div>
@@ -883,8 +712,6 @@
             <div class="before" style="background-image:url('antes6.jpeg');"></div>
             <div class="after" style="background-image:url('despues6.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="62" aria-label="Antes y después 6">
           </div>
         </div>
@@ -894,8 +721,6 @@
             <div class="before" style="background-image:url('antes7.jpeg');"></div>
             <div class="after" style="background-image:url('despues7.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="64" aria-label="Antes y después 7">
           </div>
         </div>
@@ -905,8 +730,6 @@
             <div class="before" style="background-image:url('antes8.jpeg');"></div>
             <div class="after" style="background-image:url('despues8.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="66" aria-label="Antes y después 8">
           </div>
         </div>
@@ -916,8 +739,6 @@
             <div class="before" style="background-image:url('antes9.jpeg');"></div>
             <div class="after" style="background-image:url('despues9.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="68" aria-label="Antes y después 9">
           </div>
         </div>
@@ -927,8 +748,6 @@
             <div class="before" style="background-image:url('antes10.jpeg');"></div>
             <div class="after" style="background-image:url('despues10.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="70" aria-label="Antes y después 10">
           </div>
         </div>
@@ -938,8 +757,6 @@
             <div class="before" style="background-image:url('antes11.jpeg');"></div>
             <div class="after" style="background-image:url('despues11.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="72" aria-label="Antes y después 11">
           </div>
         </div>
@@ -949,52 +766,9 @@
             <div class="before" style="background-image:url('antes12.jpeg');"></div>
             <div class="after" style="background-image:url('despues12.jpeg');"></div>
             <div class="divider"></div>
-            <span class="tag before">Antes</span>
-            <span class="tag after">Después</span>
             <input type="range" min="0" max="100" value="74" aria-label="Antes y después 12">
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="gallery-section" id="proyectos">
-      <div class="section-head">
-        <h2>Galería</h2>
-        <p>Trabajos completos y soluciones integrales en remodelación, construcción, estructuras e instalaciones.</p>
-      </div>
-
-      <div class="gallery-grid">
-        <article class="gallery-card">
-          <div class="image" style="background-image:url('antes1.jpeg');"></div>
-          <div class="meta">
-            <h3>Remodelación integral</h3>
-            <p>Renovación completa con foco en funcionalidad y modernización.</p>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="image" style="background-image:url('antes5.jpeg');"></div>
-          <div class="meta">
-            <h3>Instalaciones</h3>
-            <p>Soluciones domésticas y comerciales con ejecución técnica y segura.</p>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="image" style="background-image:url('antes7.jpeg');"></div>
-          <div class="meta">
-            <h3>Estructuras</h3>
-            <p>Obra gruesa y soportes con altos estándares de resistencia.</p>
-          </div>
-        </article>
-
-        <article class="gallery-card">
-          <div class="image" style="background-image:url('antes9.jpeg');"></div>
-          <div class="meta">
-            <h3>Acabados</h3>
-            <p>Revestimientos y terminaciones para espacios modernos y duraderos.</p>
-          </div>
-        </article>
       </div>
     </section>
 
