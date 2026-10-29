@@ -281,243 +281,6 @@
       border: 1px solid rgba(255,255,255,.12);
     }
 
-    .instagram-wrap{
-      background: #111;
-      padding: 40px 18px 18px;
-    }
-
-    .instagram-box{
-      max-width: 1180px;
-      margin: 0 auto;
-      background: #171717;
-      border: 1px solid rgba(255,255,255,.06);
-      border-radius: 22px;
-      padding: 18px 18px 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,.16);
-    }
-
-    .ig-header{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-    }
-
-    .ig-user{
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #fff;
-      min-width: 220px;
-    }
-
-    .ig-icon{
-      width: 46px;
-      height: 46px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-size: 22px;
-      font-weight: 900;
-      box-shadow: 0 10px 20px rgba(0,0,0,.18);
-    }
-
-    .ig-user .user-text{
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .ig-user strong{
-      font-size: 18px;
-      letter-spacing: -.02em;
-    }
-
-    .ig-user span{
-      color: #d9d9d9;
-      font-size: 12px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-
-    .ig-cta{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gold);
-      color: #111;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      text-decoration: none;
-    }
-
-    .ig-grid{
-      display: grid;
-      grid-template-columns: repeat(4, minmax(160px, 1fr));
-      gap: 14px;
-    }
-
-    .ig-card{
-      position: relative;
-      min-height: 220px;
-      border-radius: 18px;
-      overflow: hidden;
-      background-size: cover;
-      background-position: center;
-      box-shadow: var(--soft-shadow);
-      border: 1px solid rgba(255,255,255,.05);
-      transition: transform .28s ease, box-shadow .28s ease;
-      cursor: pointer;
-    }
-
-    .ig-card:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 18px 32px rgba(0,0,0,.2);
-    }
-
-    .ig-card::before{
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.58), rgba(0,0,0,.14));
-    }
-
-    .ig-card span{
-      position: absolute;
-      left: 12px;
-      bottom: 12px;
-      z-index: 1;
-      font-size: 11px;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      background: rgba(0,0,0,.28);
-      border: 1px solid rgba(255,255,255,.1);
-      padding: 7px 9px;
-      border-radius: 999px;
-    }
-
-    .social-banners{
-      background: #f4f4f3;
-      padding: 0 20px 28px;
-    }
-
-    .social-banners-grid{
-      max-width: 1180px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .social-banner{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 22px 22px;
-      border-radius: 18px;
-      background: #111;
-      color: #fff;
-      box-shadow: var(--soft-shadow);
-      overflow: hidden;
-      position: relative;
-      min-height: 130px;
-    }
-
-    .social-banner::before{
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,0));
-      pointer-events: none;
-    }
-
-    .social-banner.instagram{
-      background: linear-gradient(135deg, #111111, #1d1d1d 40%, #321f2b 100%);
-    }
-
-    .social-banner.facebook{
-      background: linear-gradient(135deg, #111111, #161d28 42%, #1d3552 100%);
-    }
-
-    .social-mark{
-      width: 60px;
-      height: 60px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 28px;
-      font-weight: 900;
-      color: #fff;
-      flex-shrink: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .social-banner.instagram .social-mark{
-      background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-    }
-
-    .social-banner.facebook .social-mark{
-      background: linear-gradient(135deg, #1877f2, #3b82f6);
-    }
-
-    .social-info{
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      flex: 1;
-    }
-
-    .social-label{
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: #d8d8d8;
-    }
-
-    .social-name{
-      font-size: clamp(1.1rem, 2vw, 1.8rem);
-      font-weight: 900;
-      letter-spacing: -.04em;
-    }
-
-    .social-btn{
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 12px 16px;
-      border-radius: 999px;
-      font-weight: 900;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .social-banner.instagram .social-btn{
-      background: var(--gold);
-      color: #111;
-    }
-
-    .social-banner.facebook .social-btn{
-      background: #1877f2;
-      color: #fff;
-    }
-
     .beforeafter{
       background: #f4f4f3;
       padding: 28px 20px 10px;
@@ -639,6 +402,120 @@
       opacity: 0;
       cursor: ew-resize;
       z-index: 5;
+    }
+
+    .social-banners{
+      background: #f4f4f3;
+      padding: 0 20px 28px;
+    }
+
+    .social-banners-grid{
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .social-banner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 22px;
+      border-radius: 18px;
+      background: #111;
+      color: #fff;
+      box-shadow: var(--soft-shadow);
+      overflow: hidden;
+      position: relative;
+      min-height: 130px;
+      text-decoration: none;
+    }
+
+    .social-banner::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .social-banner.instagram{
+      background: linear-gradient(135deg, #111111, #1d1d1d 40%, #321f2b 100%);
+    }
+
+    .social-banner.facebook{
+      background: linear-gradient(135deg, #111111, #161d28 42%, #1d3552 100%);
+    }
+
+    .social-mark{
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-banner.instagram .social-mark{
+      background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    }
+
+    .social-banner.facebook .social-mark{
+      background: linear-gradient(135deg, #1877f2, #3b82f6);
+    }
+
+    .social-info{
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .social-label{
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #d8d8d8;
+    }
+
+    .social-name{
+      font-size: clamp(1.1rem, 2vw, 1.8rem);
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .social-btn{
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .social-banner.instagram .social-btn{
+      background: var(--gold);
+      color: #111;
+    }
+
+    .social-banner.facebook .social-btn{
+      background: #1877f2;
+      color: #fff;
     }
 
     .quote-section{
@@ -953,10 +830,6 @@
         min-height: 180px;
       }
 
-      .ig-grid{
-        grid-template-columns: repeat(2, minmax(130px, 1fr));
-      }
-
       .social-banners-grid{
         grid-template-columns: 1fr;
       }
@@ -1007,10 +880,6 @@
       .service-card{
         height: 190px;
         min-height: 190px;
-      }
-
-      .ig-grid{
-        grid-template-columns: 1fr;
       }
 
       .social-banner{
@@ -1098,42 +967,6 @@
             <div class="service-card" data-lightbox="true" style="background-image:url('remodelaciones.jpeg');">
               <span>Remodelaciones</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="instagram-wrap">
-      <div class="instagram-box">
-        <div class="ig-header">
-          <div class="ig-user">
-            <div class="ig-icon">◎</div>
-            <div class="user-text">
-              <strong>@gka_construcciones</strong>
-              <span>Instagram</span>
-            </div>
-          </div>
-
-          <a href="https://www.instagram.com/gka_construcciones/" class="ig-cta" target="_blank" rel="noopener">
-            Ver perfil
-          </a>
-        </div>
-
-        <div class="ig-grid">
-          <div class="ig-card" data-lightbox="true" style="background-image:url('obragruesa.jpg');">
-            <span>Obra gruesa</span>
-          </div>
-
-          <div class="ig-card" data-lightbox="true" style="background-image:url('estructurasmetalicas.jpg');">
-            <span>Estructuras</span>
-          </div>
-
-          <div class="ig-card" data-lightbox="true" style="background-image:url('instalaciones.jpeg');">
-            <span>Instalaciones</span>
-          </div>
-
-          <div class="ig-card" data-lightbox="true" style="background-image:url('remodelaciones.jpeg');">
-            <span>Remodelación</span>
           </div>
         </div>
       </div>
