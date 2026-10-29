@@ -351,6 +351,31 @@
       box-shadow: 0 0 0 1px rgba(0,0,0,.08);
     }
 
+    .compare-slider .divider::before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.96);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 4px 10px rgba(0,0,0,.18);
+    }
+
+    .compare-slider .divider::after{
+      content: "↔";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1;
+    }
+
     .compare-slider input[type="range"]{
       position: absolute;
       inset: 0;
