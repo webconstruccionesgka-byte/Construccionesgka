@@ -651,13 +651,12 @@
     }
 
     @media (max-width: 1100px){
-      .compare-grid{ grid-template-columns: repeat(2, minmax(260px, 1fr)); }
-    }
+      .compare-grid{
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+      }
 
-    @media (max-width: 900px){
       .hero-inner{
         grid-template-columns: 1fr;
-        padding-bottom: 24px;
       }
 
       .hero-copy{
@@ -665,23 +664,117 @@
         padding-left: 0;
       }
 
-      .hero-copy h1{ margin: 0 auto; }
-      .hero-copy .sub{ margin-left: auto; margin-right: auto; }
-      .hero-actions{ justify-content: center; }
-      .hero-meta{ justify-content: center; }
-      .topbar{ flex-wrap: wrap; }
-      .nav{ width: 100%; }
+      .hero-copy h1{
+        margin: 0 auto;
+      }
+
+      .hero-copy .sub{
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions{
+        justify-content: center;
+      }
+
+      .hero-meta{
+        justify-content: center;
+      }
     }
 
-    @media (max-width: 600px){
-      .topbar{ padding: 14px 12px; }
-      .brand-mark{ width: 240px; }
-      .nav{ gap: 12px 16px; }
-      .nav a{ font-size: 11px; }
-      .header-btn{ font-size: 11px; padding: 8px 14px; }
-      .compare-grid{ grid-template-columns: 1fr; }
-      .quote-form{ grid-template-columns: 1fr; }
-      .cta-band .inner{ flex-direction: column; }
+    @media (max-width: 768px){
+      .topbar{
+        flex-wrap: wrap;
+        padding: 12px 14px;
+      }
+
+      .nav{
+        width: 100%;
+        gap: 12px 16px;
+      }
+
+      .brand-mark{
+        width: 180px;
+      }
+
+      .brand-mark img{
+        width: 180px;
+      }
+
+      .header-btn{
+        font-size: 11px;
+        padding: 8px 14px;
+      }
+
+      .hero-grid{
+        grid-template-columns: repeat(2, minmax(130px, 1fr));
+        gap: 12px;
+      }
+
+      .service-card{
+        height: 180px;
+        min-height: 180px;
+      }
+
+      .compare-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .quote-form{
+        grid-template-columns: 1fr;
+      }
+
+      .cta-band .inner{
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px){
+      .page{
+        width: min(100%, calc(100% - 10px));
+        margin: 10px auto;
+      }
+
+      .brand-mark{
+        width: 150px;
+      }
+
+      .brand-mark img{
+        width: 150px;
+      }
+
+      .nav a{
+        font-size: 10px;
+      }
+
+      .hero-copy h1{
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+
+      .hero-copy .sub{
+        font-size: 15px;
+      }
+
+      .hero-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .service-card{
+        height: 190px;
+        min-height: 190px;
+      }
+
+      .section-head h2{
+        font-size: 2rem;
+      }
+
+      .quote-card{
+        padding: 18px 14px;
+      }
+
+      .submit-btn{
+        width: 100%;
+      }
     }
   </style>
 </head>
