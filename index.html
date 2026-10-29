@@ -1157,12 +1157,17 @@
             <label for="servicio">Tipo de servicio</label>
             <select id="servicio" name="servicio">
               <option value="">Selecciona</option>
-              <option>Remodelación de fachada</option>
+              <option>Remodelación interior o exterior</option>
               <option>Estructuras metálicas</option>
-              <option>Rejas y cortinas</option>
-              <option>Reforma de baño</option>
+              <option>Cierres perimetrales y rejas</option>
+              <option>Baños</option>
               <option>Cocina</option>
-              <option>Servicio para empresas</option>
+              <option>Techumbres</option>
+              <option>Obra gruesa</option>
+              <option>Instalaciones domiciliarias</option>
+              <option>Pinturas y terminaciones</option>
+              <option>Cobertizos</option>
+              <option>Revestimiento de pisos</option>
             </select>
           </div>
 
@@ -1264,7 +1269,7 @@
       const presupuesto = document.getElementById("presupuesto").value.trim();
       const mensaje = document.getElementById("mensaje").value.trim();
 
-      const text = [
+      const lines = [
         "Hola GKA Construcciones, quiero cotizar un proyecto.",
         "",
         "Nombre: " + (nombre || "-"),
@@ -1274,7 +1279,9 @@
         "Ciudad: " + (ciudad || "-"),
         "Presupuesto estimado: " + (presupuesto || "-"),
         "Mensaje: " + (mensaje || "-")
-      ].join("%0A");
+      ];
+
+      const text = lines.join("\n");
 
       const whatsappUrl = "https://wa.me/56953012409?text=" + encodeURIComponent(text);
       const mailtoUrl = "mailto:construccionesgka@gmail.com?subject=Cotización%20GKA%20Construcciones&body=" + encodeURIComponent(text);
