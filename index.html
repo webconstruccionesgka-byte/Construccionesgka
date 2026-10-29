@@ -6,18 +6,19 @@
   <title>GKA Construcciones</title>
   <style>
     :root{
-      --bg: #dfe2e7;
-      --black: #101010;
+      --bg: #e8eaee;
+      --black: #111111;
       --dark: #171717;
       --gold: #f3c316;
-      --gold-2: #e0b000;
+      --gold-2: #d7a70d;
       --text: #ffffff;
-      --muted: #a9a9a9;
-      --light: #f4f4f4;
+      --muted: #a2a2a2;
       --panel: #ffffff;
+      --light: #f4f4f4;
       --input: #f7f7f7;
-      --blue: #0d3f8b;
-      --shadow: 0 14px 32px rgba(0,0,0,.12);
+      --line: rgba(255,255,255,.08);
+      --shadow: 0 18px 44px rgba(0,0,0,.12);
+      --soft-shadow: 0 10px 26px rgba(0,0,0,.08);
     }
 
     * { box-sizing: border-box; }
@@ -35,14 +36,14 @@
 
     .page{
       width: min(1280px, calc(100% - 20px));
-      margin: 18px auto;
+      margin: 16px auto;
       background: #fff;
-      box-shadow: 0 10px 28px rgba(0,0,0,.12);
+      box-shadow: var(--shadow);
     }
 
     .topbar{
-      background: #111;
-      padding: 14px 24px 12px;
+      background: #101010;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -55,62 +56,62 @@
       align-items: center;
       justify-content: center;
       min-width: 260px;
-      margin-left: 0;
     }
 
     .brand-mark{
       width: 350px;
-      min-width: 350px;
+      max-width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .brand-mark svg{
+    .brand-mark img{
       width: 100%;
       height: auto;
+      object-fit: contain;
       display: block;
+      filter: drop-shadow(0 2px 10px rgba(255,255,255,.1));
     }
 
     .nav{
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 30px;
-      margin-left: auto;
-      margin-right: auto;
+      gap: 28px;
       flex-wrap: wrap;
+      margin: 0 auto;
     }
 
     .nav a{
       color: #fff;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
-      opacity: .96;
+      letter-spacing: .04em;
+      text-transform: uppercase;
       transition: .2s ease;
-      letter-spacing: 0.04em;
     }
 
     .nav a:hover{
       color: var(--gold);
     }
 
-    .btn-whatsapp{
+    .header-cta{
       background: var(--gold);
       color: #111;
-      border-radius: 28px;
+      border-radius: 999px;
       padding: 10px 18px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 14px;
-      font-weight: 800;
-      border: 2px solid rgba(0,0,0,.12);
-      box-shadow: inset 0 -2px 0 rgba(0,0,0,.08);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
       white-space: nowrap;
     }
 
-    .btn-whatsapp .icon{
+    .header-cta .icon{
       width: 22px;
       height: 22px;
       border-radius: 50%;
@@ -124,45 +125,44 @@
     }
 
     .hero{
-      background: #111;
-      padding: 0;
+      background: #0f0f0f;
       color: #fff;
+      padding: 0;
     }
 
     .hero-inner{
       display: grid;
-      grid-template-columns: 1.08fr 1fr;
+      grid-template-columns: 1.1fr 1fr;
       align-items: center;
-      min-height: 500px;
-      gap: 24px;
-      padding: 0 18px 0 18px;
+      min-height: 540px;
+      padding: 0 18px;
+      gap: 22px;
     }
 
     .hero-copy{
-      padding: 20px 0 28px 14px;
+      padding: 20px 0 24px 10px;
     }
 
     .hero-copy h1{
       margin: 0;
-      max-width: 700px;
-      color: #fff;
-      text-transform: uppercase;
-      font-size: clamp(2.8rem, 4vw, 5rem);
-      line-height: .92;
+      font-size: clamp(2.5rem, 4vw, 5.2rem);
+      line-height: .9;
       letter-spacing: -0.08em;
+      text-transform: uppercase;
       font-weight: 900;
+      max-width: 680px;
     }
 
     .hero-copy .sub{
-      margin-top: 24px;
-      max-width: 620px;
-      color: #d7d7d7;
+      margin-top: 22px;
+      color: #d9d9d9;
       font-size: 18px;
       line-height: 1.5;
+      max-width: 620px;
     }
 
-    .hero-cta{
-      margin-top: 26px;
+    .hero-actions{
+      margin-top: 28px;
       display: flex;
       align-items: center;
       gap: 14px;
@@ -172,25 +172,38 @@
     .btn-primary{
       background: var(--gold);
       color: #111;
-      font-weight: 800;
       border-radius: 12px;
       padding: 14px 22px;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      border: none;
+      font-weight: 900;
       font-size: 16px;
-      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      border: none;
+    }
+
+    .btn-secondary{
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 15px;
     }
 
     .hero-meta{
+      margin-top: 28px;
       display: flex;
       flex-wrap: wrap;
       gap: 18px 20px;
-      margin-top: 26px;
-      color: #d7d7d7;
+      color: #d9d9d9;
       font-size: 12px;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
     }
 
     .hero-meta .item{
@@ -200,7 +213,7 @@
       white-space: nowrap;
     }
 
-    .hero-meta .dot{
+    .dot{
       width: 8px;
       height: 8px;
       border-radius: 50%;
@@ -212,163 +225,162 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%;
-      padding: 8px 0;
+      padding: 18px 0;
+      min-height: 420px;
     }
 
-    .collage{
+    .hero-grid{
       width: 100%;
+      max-width: 620px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(120px, 1fr));
-      gap: 14px;
-      padding-right: 10px;
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      gap: 16px;
     }
 
-    .tile{
+    .service-card{
       position: relative;
-      min-height: 170px;
-      border-radius: 10px;
+      min-height: 180px;
+      border-radius: 16px;
       overflow: hidden;
+      background: linear-gradient(135deg, #222, #101010);
+      box-shadow: var(--soft-shadow);
+      border: 1px solid rgba(255,255,255,.06);
       background-size: cover;
       background-position: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,.12);
     }
 
-    .tile::before{
+    .service-card::before{
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.08));
+      background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.15));
     }
 
-    .tile span{
+    .service-card span{
       position: absolute;
       left: 12px;
-      bottom: 10px;
+      bottom: 12px;
       z-index: 1;
-      font-size: 11px;
-      font-weight: 800;
-      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: .04em;
+      letter-spacing: .06em;
+      color: #fff;
       max-width: 80%;
       line-height: 1.2;
     }
 
-    .beforeafter{
+    .before-after{
       background: #f4f4f3;
-      padding: 18px 20px 12px;
+      padding: 26px 20px 10px;
     }
 
-    .beforeafter-inner{
-      background: #f5f5f5;
+    .section-head{
       text-align: center;
-      padding: 10px 0 0;
+      margin-bottom: 14px;
     }
 
-    .beforeafter-title{
-      display: inline-block;
-      font-size: clamp(2.2rem, 3vw, 4rem);
+    .section-head h2{
+      margin: 0;
+      font-size: clamp(2.3rem, 4vw, 4rem);
       font-weight: 900;
       letter-spacing: -0.06em;
       text-transform: uppercase;
-      color: #111;
-      margin: 0;
-      position: relative;
     }
 
-    .beforeafter-title::after{
+    .section-head h2::after{
       content: "";
       display: block;
-      width: 100%;
+      width: 130px;
       height: 4px;
       background: var(--gold);
-      margin-top: 8px;
-      border-radius: 4px;
+      margin: 10px auto 0;
+      border-radius: 999px;
     }
 
-    .beforeafter-sub{
-      margin: 14px auto 0;
-      color: #4b4b4b;
+    .section-head p{
+      margin: 16px auto 0;
+      color: #555;
       font-size: 17px;
-      font-weight: 500;
+      max-width: 760px;
+      line-height: 1.5;
     }
 
-    .compare-gallery{
+    .compare-grid{
+      max-width: 1180px;
+      margin: 24px auto 0;
       display: grid;
-      grid-template-columns: repeat(3, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, minmax(280px, 1fr));
       gap: 22px;
-      margin-top: 22px;
-      align-items: start;
     }
 
     .compare-item{
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
     }
 
-    .slicer{
+    .compare-slider{
       position: relative;
       width: 100%;
       max-width: 360px;
       height: 250px;
+      border-radius: 14px;
       overflow: hidden;
-      border-radius: 12px;
-      background: #d9d9d9;
+      background: #ddd;
+      box-shadow: var(--soft-shadow);
       border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 8px 18px rgba(0,0,0,.08);
     }
 
-    .slicer .image{
+    .compare-slider .before,
+    .compare-slider .after{
       position: absolute;
       inset: 0;
       background-size: cover;
       background-position: center;
     }
 
-    .slicer .before{
+    .compare-slider .before{
       z-index: 1;
     }
 
-    .slicer .after{
+    .compare-slider .after{
       z-index: 2;
       clip-path: inset(0 0 0 50%);
     }
 
-    .slicer .divider{
+    .compare-slider .divider{
       position: absolute;
       top: 0;
       bottom: 0;
       left: 50%;
       width: 3px;
-      background: rgba(255,255,255,.95);
+      background: rgba(255,255,255,.9);
       z-index: 4;
       transform: translateX(-50%);
       box-shadow: 0 0 0 1px rgba(0,0,0,.12);
     }
 
-    .slicer .divider::before{
+    .compare-slider .divider::before{
       content: "";
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: rgba(255,255,255,.96);
-      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 4px 10px rgba(0,0,0,.18);
     }
 
-    .slicer .divider::after{
+    .compare-slider .divider::after{
       content: "↔";
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 17px;
       font-weight: 900;
+      font-size: 18px;
       color: #111;
     }
 
@@ -378,202 +390,138 @@
       z-index: 5;
       padding: 7px 12px;
       border-radius: 8px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 900;
+      letter-spacing: .05em;
       text-transform: uppercase;
-      letter-spacing: .04em;
     }
 
-    .before-tag{
+    .tag.before{
       left: 12px;
       background: var(--gold);
       color: #111;
     }
 
-    .after-tag{
+    .tag.after{
       right: 12px;
       background: #fff;
       color: #111;
     }
 
-    .slicer input[type="range"]{
+    .compare-slider input[type="range"]{
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       opacity: 0;
-      z-index: 6;
       cursor: ew-resize;
+      z-index: 6;
     }
 
-    .gallery{
+    .gallery-section{
       background: #111;
       color: #fff;
       padding: 36px 18px 28px;
     }
 
-    .gallery-title{
-      font-size: clamp(2.2rem, 3vw, 4rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: -0.06em;
+    .gallery-section .section-head h2{
       color: #fff;
-      margin: 0 auto;
-      display: block;
-      width: max-content;
-      position: relative;
     }
 
-    .gallery-title::after{
-      content: "";
-      display: block;
-      width: 100%;
-      height: 4px;
-      background: var(--gold);
-      margin-top: 8px;
-      border-radius: 4px;
+    .gallery-section .section-head p{
+      color: #d6d6d6;
     }
 
-    .gallery-sub{
-      text-align: center;
-      margin-top: 14px;
-      color: #d8d8d8;
-      font-size: 16px;
-    }
-
-    .projects-grid{
-      max-width: 1100px;
-      margin: 22px auto 0;
+    .gallery-grid{
+      max-width: 1160px;
+      margin: 28px auto 0;
       display: grid;
-      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
       gap: 18px;
     }
 
-    .project{
+    .gallery-card{
       background: #111;
-      border: none;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0,0,0,.12);
     }
 
-    .project .img{
-      width: 100%;
-      height: 240px;
+    .gallery-card .image{
+      height: 220px;
       background-size: cover;
       background-position: center;
-      display: block;
     }
 
-    .project .info{
-      background: #111;
-      padding: 14px 10px 18px;
-      text-align: left;
+    .gallery-card .meta{
+      padding: 14px 12px 16px;
     }
 
-    .project .name{
-      margin: 0 0 4px;
-      color: #fff;
-      font-size: 16px;
+    .gallery-card h3{
+      margin: 0 0 8px;
+      font-size: 17px;
       font-weight: 800;
-      line-height: 1.2;
+      letter-spacing: -.03em;
     }
 
-    .project .detail{
+    .gallery-card p{
       margin: 0;
-      color: #d7d7d7;
-      font-size: 14px;
-      line-height: 1.4;
+      color: #d3d3d3;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     .social-section{
-      background: #f4f4f4;
-      padding: 42px 18px 26px;
-      border-top: 1px solid rgba(0,0,0,.04);
-    }
-
-    .social-section h2{
-      text-align: center;
-      font-size: clamp(2rem, 3vw, 3rem);
-      text-transform: uppercase;
-      font-weight: 900;
-      letter-spacing: -0.05em;
-      margin: 0 0 12px;
-      color: #111;
-    }
-
-    .social-sub{
-      text-align: center;
-      color: #4d4d4d;
-      font-size: 16px;
-      margin-bottom: 24px;
+      background: #f3f3f3;
+      padding: 42px 18px 28px;
     }
 
     .social-grid{
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 24px auto 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+      gap: 22px;
     }
 
     .social-card{
       background: #fff;
-      border: 1px solid rgba(0,0,0,.08);
+      border: 1px solid rgba(0,0,0,.06);
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+      box-shadow: var(--soft-shadow);
     }
 
-    .social-card .mock{
+    .social-visual{
       position: relative;
-      aspect-ratio: 1 / 1;
+      height: 260px;
       background-size: cover;
       background-position: center;
-      overflow: hidden;
     }
 
-    .social-card .mock::before{
+    .social-visual::before{
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,.04), rgba(0,0,0,.46));
+      background: linear-gradient(to top, rgba(0,0,0,.58), rgba(0,0,0,.12));
     }
 
-    .social-card .meta{
+    .social-chip{
       position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
+      left: 16px;
+      bottom: 16px;
       z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .social-badge{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.18);
       color: #fff;
-      background: rgba(0,0,0,.22);
-      padding: 8px 10px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
       backdrop-filter: blur(4px);
-    }
-
-    .social-brand{
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: #fff;
-      opacity: .9;
     }
 
     .social-info{
@@ -581,53 +529,52 @@
     }
 
     .social-info h3{
-      margin: 0 0 8px;
-      font-size: 26px;
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: -.05em;
       font-weight: 900;
-      letter-spacing: -0.04em;
-      color: #111;
     }
 
     .social-info p{
       margin: 0;
-      color: #4d4d4d;
+      color: #4a4a4a;
+      line-height: 1.6;
       font-size: 15px;
-      line-height: 1.55;
     }
 
     .quote-section{
       background: #111;
-      padding: 40px 18px 50px;
+      padding: 40px 18px 52px;
     }
 
-    .quote-wrap{
+    .quote-card{
       max-width: 1100px;
       margin: 0 auto;
       background: #171717;
       border: 1px solid rgba(255,255,255,.06);
       border-radius: 18px;
       padding: 28px;
-      box-shadow: 0 16px 32px rgba(0,0,0,.12);
+      box-shadow: var(--shadow);
     }
 
-    .quote-head{
-      text-align: center;
-      margin-bottom: 22px;
-    }
-
-    .quote-head h2{
+    .quote-card h2{
       margin: 0;
+      text-align: center;
       color: #fff;
-      font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 900;
-      letter-spacing: -0.05em;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
       text-transform: uppercase;
+      letter-spacing: -0.06em;
+      font-weight: 900;
     }
 
-    .quote-head p{
-      margin: 12px 0 0;
+    .quote-card .lead{
+      margin: 12px auto 20px;
+      text-align: center;
       color: #d6d6d6;
-      font-size: 16px;
+      font-size: 15px;
+      max-width: 680px;
+      line-height: 1.6;
     }
 
     .quote-form{
@@ -648,35 +595,35 @@
 
     .field label{
       color: #f0f0f0;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: .04em;
     }
 
     .field input,
     .field select,
     .field textarea{
       width: 100%;
-      border: 1px solid rgba(255,255,255,.08);
       background: var(--input);
-      color: #111;
-      padding: 14px 14px;
+      border: 1px solid rgba(255,255,255,.08);
       border-radius: 10px;
-      font-size: 15px;
+      padding: 14px 14px;
+      color: #111;
       outline: none;
+      font-size: 15px;
     }
 
     .field textarea{
-      min-height: 120px;
+      min-height: 130px;
       resize: vertical;
     }
 
     .field input:focus,
     .field select:focus,
     .field textarea:focus{
-      border-color: rgba(245,196,13,.8);
-      box-shadow: 0 0 0 3px rgba(245,196,13,.18);
+      border-color: rgba(243,195,22,.8);
+      box-shadow: 0 0 0 3px rgba(243,195,22,.2);
     }
 
     .form-actions{
@@ -692,10 +639,10 @@
       border: none;
       border-radius: 12px;
       padding: 15px 28px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 900;
-      letter-spacing: .04em;
       text-transform: uppercase;
+      letter-spacing: .04em;
       cursor: pointer;
       transition: .2s ease;
     }
@@ -708,125 +655,124 @@
     .cta-band{
       background: var(--gold);
       color: #111;
-      text-align: center;
       padding: 18px 20px;
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.3;
+      text-align: center;
     }
 
     .cta-band .inner{
+      max-width: 1150px;
+      margin: 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 14px;
       flex-wrap: wrap;
-      max-width: 1100px;
-      margin: 0 auto;
     }
 
     .cta-band .small{
       font-size: 22px;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: -0.04em;
+      letter-spacing: -.04em;
     }
 
     .cta-band .sub{
-      font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       opacity: .85;
+      font-size: 15px;
     }
 
-    .cta-band .whats{
+    .cta-band .cta-link{
       background: #111;
       color: var(--gold);
-      border-radius: 30px;
+      border-radius: 999px;
       padding: 8px 18px;
+      font-weight: 900;
       font-size: 14px;
-      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      border: 2px solid rgba(0,0,0,.12);
     }
 
     .footer{
       background: #111;
-      color: #d0d0d0;
-      padding: 26px 18px 18px;
-      border-top: 1px solid rgba(255,255,255,.04);
+      color: #d3d3d3;
+      padding: 30px 18px 18px;
     }
 
     .footer-inner{
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.3fr 1fr 1.1fr;
+      grid-template-columns: 1.2fr 1fr 1fr;
       gap: 20px;
-      align-items: start;
     }
 
     .footer-title{
-      font-size: 16px;
-      font-weight: 800;
+      margin: 0 0 12px;
       color: #fff;
-      margin: 0 0 10px;
       text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: .06em;
     }
 
     .footer-list{
       list-style: none;
-      margin: 0;
       padding: 0;
-      color: #d5d5d5;
-      font-size: 14px;
+      margin: 0;
+      color: #d9d9d9;
       line-height: 1.9;
+      font-size: 14px;
     }
 
     .footer-list a{
-      color: #d5d5d5;
+      color: #d9d9d9;
     }
 
     .footer-list a:hover{
       color: var(--gold);
     }
 
-    .bottom-line{
-      max-width: 1100px;
+    .bottom{
+      max-width: 1120px;
       margin: 18px auto 0;
-      padding-top: 14px;
       border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 16px;
       text-align: center;
-      color: #b5b5b5;
       font-size: 12px;
+      color: #b9b9b9;
     }
 
-    @media (max-width: 980px){
-      .topbar{
-        flex-wrap: wrap;
-        gap: 12px;
+    @media (max-width: 1100px){
+      .compare-grid{
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
       }
 
-      .brand{
-        width: 100%;
+      .gallery-grid{
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
       }
 
-      .nav{
-        width: 100%;
-        justify-content: center;
-        order: 3;
-        flex-wrap: wrap;
+      .social-grid{
+        grid-template-columns: 1fr;
       }
 
+      .footer-inner{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px){
       .hero-inner{
         grid-template-columns: 1fr;
-        padding: 0 20px 22px;
+        padding-bottom: 26px;
       }
 
       .hero-copy{
-        padding-left: 0;
         text-align: center;
+        padding-left: 0;
       }
 
       .hero-copy h1{
@@ -838,7 +784,7 @@
         margin-right: auto;
       }
 
-      .hero-cta{
+      .hero-actions{
         justify-content: center;
       }
 
@@ -846,20 +792,46 @@
         justify-content: center;
       }
 
-      .collage{
-        max-width: 620px;
-        margin: 0 auto;
+      .hero-visual{
+        min-height: 0;
       }
 
-      .compare-gallery{
+      .topbar{
+        flex-wrap: wrap;
+      }
+
+      .nav{
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 600px){
+      .topbar{
+        padding: 14px 12px;
+      }
+
+      .brand-mark{
+        width: 250px;
+      }
+
+      .nav{
+        gap: 14px 18px;
+      }
+
+      .nav a{
+        font-size: 11px;
+      }
+
+      .header-cta{
+        font-size: 11px;
+        padding: 9px 14px;
+      }
+
+      .compare-grid{
         grid-template-columns: 1fr;
       }
 
-      .projects-grid{
-        grid-template-columns: 1fr;
-      }
-
-      .social-grid{
+      .gallery-grid{
         grid-template-columns: 1fr;
       }
 
@@ -867,63 +839,8 @@
         grid-template-columns: 1fr;
       }
 
-      .footer-inner{
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px){
-      .topbar{
-        padding: 16px 14px;
-      }
-
-      .nav{
-        gap: 12px 16px;
-      }
-
-      .nav a{
-        font-size: 11px;
-      }
-
-      .btn-whatsapp{
-        font-size: 12px;
-        padding: 9px 14px;
-      }
-
-      .hero-copy h1{
-        font-size: 2.5rem;
-      }
-
-      .hero-copy .sub{
-        font-size: 15px;
-      }
-
-      .collage{
-        grid-template-columns: repeat(2, minmax(120px, 1fr));
-      }
-
-      .tile{
-        min-height: 150px;
-      }
-
-      .slicer{
-        height: 220px;
-      }
-
-      .gallery-title{
-        font-size: 2.2rem;
-      }
-
-      .cta-band .small{
-        font-size: 18px;
-      }
-
-      .cta-band .sub{
-        font-size: 13px;
-      }
-
-      .social-info h3{
-        font-size: 22px;
+      .cta-band .inner{
+        flex-direction: column;
       }
     }
   </style>
@@ -932,32 +849,8 @@
   <div class="page">
     <header class="topbar">
       <div class="brand">
-        <div class="brand-mark" aria-label="GKA Construcciones logo">
-          <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo GKA Construcciones">
-            <defs>
-              <pattern id="brickPattern" width="22" height="14" patternUnits="userSpaceOnUse">
-                <rect width="22" height="14" fill="#e81b1b" />
-                <path d="M0 0H22V14H0Z" fill="none" stroke="#efefef" stroke-width="1" opacity="0.18" />
-                <path d="M0 7H22 M11 0V14" stroke="#d01010" stroke-width="1" />
-              </pattern>
-            </defs>
-
-            <g transform="translate(-10 6)">
-              <g transform="translate(10 0)">
-                <path d="M35 128 L148 30 L260 128 Z" fill="#ffffff"/>
-                <path d="M95 63 L148 30 L201 63 Z" fill="#ffffff"/>
-                <path d="M46 128 L103 74 L103 128 Z" fill="#ffffff"/>
-                <path d="M192 74 L249 128 L192 128 Z" fill="#ffffff"/>
-                <rect x="48" y="80" width="198" height="48" fill="url(#brickPattern)"/>
-                <rect x="101" y="98" width="16" height="16" fill="#ffffff"/>
-                <rect x="150" y="98" width="16" height="16" fill="#ffffff"/>
-                <rect x="199" y="98" width="16" height="16" fill="#ffffff"/>
-              </g>
-
-              <text x="300" y="120" font-size="118" font-weight="900" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" letter-spacing="-8" text-anchor="middle">GKA</text>
-              <text x="345" y="166" font-size="38" font-weight="800" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" letter-spacing="1.8" text-anchor="middle">CONSTRUCCIONES</text>
-            </g>
-          </svg>
+        <div class="brand-mark">
+          <img src="assets/images/logoGKA.jpg" alt="GKA Construcciones" />
         </div>
       </div>
 
@@ -965,34 +858,33 @@
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+      <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." class="header-cta" target="_blank" rel="noopener">
         <span class="icon">W</span>
-        cotizar por WhatsApp
+        WhatsApp
       </a>
     </header>
 
-    <section id="inicio" class="hero">
+    <section class="hero" id="inicio">
       <div class="hero-inner">
         <div class="hero-copy">
           <h1>
-            CONSTRUIMOS Y<br>
-            HACEMOS REALIDAD<br>
-            TUS SUEÑOS
+            Construimos y<br>
+            hacemos realidad<br>
+            tus sueños
           </h1>
 
           <div class="sub">
-            Construimos y supervisamos con profesionales.<br>
-            Calidad, compromiso y eficiencia.
+            Construimos y supervisamos con profesionales. Calidad, compromiso y eficiencia.
           </div>
 
-          <div class="hero-cta">
-            <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="btn-primary">
-              <span>◉</span> cotizar por WhatsApp →
+          <div class="hero-actions">
+            <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." class="btn-primary" target="_blank" rel="noopener">
+              Cotizar por WhatsApp
             </a>
+            <a href="#contacto" class="btn-secondary">Solicitar presupuesto</a>
           </div>
 
           <div class="hero-meta">
@@ -1003,20 +895,20 @@
         </div>
 
         <div class="hero-visual">
-          <div class="collage">
-            <div class="tile" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80');">
+          <div class="hero-grid">
+            <div class="service-card" style="background-image:url('assets/images/antes1.jpg');">
               <span>Obra gruesa</span>
             </div>
 
-            <div class="tile" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80');">
+            <div class="service-card" style="background-image:url('assets/images/antes2.jpg');">
               <span>Estructuras metálicas</span>
             </div>
 
-            <div class="tile" style="background-image:url('https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=900&q=80');">
+            <div class="service-card" style="background-image:url('assets/images/antes3.jpg');">
               <span>Instalaciones</span>
             </div>
 
-            <div class="tile" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80');">
+            <div class="service-card" style="background-image:url('assets/images/antes4.jpg');">
               <span>Remodelaciones</span>
             </div>
           </div>
@@ -1024,138 +916,241 @@
       </div>
     </section>
 
-    <section class="beforeafter" id="servicios">
-      <div class="beforeafter-inner">
-        <h2 class="beforeafter-title">Antes &amp; Después</h2>
-        <p class="beforeafter-sub">Mira la transformación real de nuestros proyectos</p>
+    <section class="before-after" id="servicios">
+      <div class="section-head">
+        <h2>Antes &amp; después</h2>
+        <p>Detalle visual de algunos de nuestros proyectos más representativos.</p>
+      </div>
 
-        <div class="compare-gallery">
-          <div class="compare-item">
-            <div class="slicer">
-              <div class="image before" style="background-image:url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80');"></div>
-              <div class="image after" style="background-image:url('https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=80');"></div>
-              <div class="divider"></div>
-              <label class="tag before-tag">Antes</label>
-              <label class="tag after-tag">Después</label>
-              <input type="range" min="0" max="100" value="50" aria-label="Baño antes y después">
-            </div>
+      <div class="compare-grid">
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes1.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues1.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Antes y después 1" />
           </div>
+        </div>
 
-          <div class="compare-item">
-            <div class="slicer">
-              <div class="image before" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');"></div>
-              <div class="image after" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80');"></div>
-              <div class="divider"></div>
-              <label class="tag before-tag">Antes</label>
-              <label class="tag after-tag">Después</label>
-              <input type="range" min="0" max="100" value="55" aria-label="Cocina antes y después">
-            </div>
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes2.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues2.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="52" aria-label="Antes y después 2" />
           </div>
+        </div>
 
-          <div class="compare-item">
-            <div class="slicer">
-              <div class="image before" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80');"></div>
-              <div class="image after" style="background-image:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80');"></div>
-              <div class="divider"></div>
-              <label class="tag before-tag">Antes</label>
-              <label class="tag after-tag">Después</label>
-              <input type="range" min="0" max="100" value="60" aria-label="Fachada antes y después">
-            </div>
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes3.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues3.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="54" aria-label="Antes y después 3" />
+          </div>
+        </div>
+
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes4.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues4.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="58" aria-label="Antes y después 4" />
+          </div>
+        </div>
+
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes5.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues5.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="60" aria-label="Antes y después 5" />
+          </div>
+        </div>
+
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes6.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues6.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="62" aria-label="Antes y después 6" />
+          </div>
+        </div>
+
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes7.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues7.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="64" aria-label="Antes y después 7" />
+          </div>
+        </div>
+
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes8.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues8.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="66" aria-label="Antes y después 8" />
+          </div>
+        </div>
+
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes9.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues9.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="68" aria-label="Antes y después 9" />
+          </div>
+        </div>
+
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes10.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues10.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="70" aria-label="Antes y después 10" />
+          </div>
+        </div>
+
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes11.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues11.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="72" aria-label="Antes y después 11" />
+          </div>
+        </div>
+
+        <div class="compare-item">
+          <div class="compare-slider">
+            <div class="before" style="background-image:url('assets/images/antes12.jpg');"></div>
+            <div class="after" style="background-image:url('assets/images/despues12.jpg');"></div>
+            <div class="divider"></div>
+            <span class="tag before">Antes</span>
+            <span class="tag after">Después</span>
+            <input type="range" min="0" max="100" value="74" aria-label="Antes y después 12" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="gallery" id="proyectos">
-      <h2 class="gallery-title">Galería de Proyectos</h2>
-      <p class="gallery-sub">Algunos de nuestros trabajos realizados en Santiago</p>
+    <section class="gallery-section" id="proyectos">
+      <div class="section-head">
+        <h2>Galería</h2>
+        <p>Trabajos completos y soluciones integrales en remodelación, construcción, estructuras e instalaciones.</p>
+      </div>
 
-      <div class="projects-grid">
-        <article class="project">
-          <div class="img" style="background-image:url('https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="info">
-            <h3 class="name">Baño moderno</h3>
-            <p class="detail">Santiago<br>Renovación completa • 7m²</p>
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <div class="image" style="background-image:url('assets/images/antes1.jpg');"></div>
+          <div class="meta">
+            <h3>Remodelación integral</h3>
+            <p>Renovación completa con foco en funcionalidad, modernización y calidad.</p>
           </div>
         </article>
 
-        <article class="project">
-          <div class="img" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="info">
-            <h3 class="name">Cocina moderna</h3>
-            <p class="detail">Providencia<br>Remodelación integral • 45m²</p>
+        <article class="gallery-card">
+          <div class="image" style="background-image:url('assets/images/antes5.jpg');"></div>
+          <div class="meta">
+            <h3>Instalaciones</h3>
+            <p>Soluciones domésticas y comerciales con ejecución técnica y segura.</p>
           </div>
         </article>
 
-        <article class="project">
-          <div class="img" style="background-image:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="info">
-            <h3 class="name">Fachada renovada</h3>
-            <p class="detail">La Reina<br>Revestimiento y mejora exterior</p>
+        <article class="gallery-card">
+          <div class="image" style="background-image:url('assets/images/antes7.jpg');"></div>
+          <div class="meta">
+            <h3>Estructuras</h3>
+            <p>Trabajos de obra gruesa y soportes con altos estándares de resistencia.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <div class="image" style="background-image:url('assets/images/antes9.jpg');"></div>
+          <div class="meta">
+            <h3>Revestimientos</h3>
+            <p>Acabados de alto nivel para espacios modernos y duraderos.</p>
           </div>
         </article>
       </div>
     </section>
 
     <section class="social-section">
-      <h2>Banners para redes sociales</h2>
-      <p class="social-sub">Material visual para Instagram y Facebook</p>
+      <div class="section-head">
+        <h2>Redes sociales</h2>
+        <p>Diseño visual para contenido en Instagram y Facebook con estilo profesional y moderno.</p>
+      </div>
 
       <div class="social-grid">
         <div class="social-card">
-          <div class="mock" style="background-image:url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=80');">
-            <div class="meta">
-              <span class="social-badge">Instagram</span>
-              <span class="social-brand">GKA</span>
-            </div>
+          <div class="social-visual" style="background-image:url('assets/images/antes6.jpg');">
+            <span class="social-chip">Instagram</span>
           </div>
           <div class="social-info">
             <h3>Instagram</h3>
-            <p>Banner promocional para publicaciones, promociones o reforzamiento de marca con foco en remodelación y construcción.</p>
+            <p>Contenido visual para promocionar remodelaciones, servicios y proyectos ejecutados con estilo y calidad.</p>
           </div>
         </div>
 
         <div class="social-card">
-          <div class="mock" style="background-image:url('https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1000&q=80');">
-            <div class="meta">
-              <span class="social-badge">Facebook</span>
-              <span class="social-brand">GKA</span>
-            </div>
+          <div class="social-visual" style="background-image:url('assets/images/antes8.jpg');">
+            <span class="social-chip">Facebook</span>
           </div>
           <div class="social-info">
             <h3>Facebook</h3>
-            <p>Portada o banner para campaña con imagen moderna, estilo industrial y enfoque en servicios para viviendas y empresas.</p>
+            <p>Publicaciones para reforzar la confianza del cliente con trabajos reales, acabados profesionales y atención cercana.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="quote-section" id="contacto">
-      <div class="quote-wrap">
-        <div class="quote-head">
-          <h2>Formulario de cotización</h2>
-          <p>Completa tus datos y te contactaremos para asesorarte sin costo.</p>
-        </div>
+      <div class="quote-card">
+        <h2>Formulario de cotización</h2>
+        <p class="lead">Completa tus datos y te contactaremos para asesorarte sin costo.</p>
 
-        <form id="cotizacionForm" class="quote-form">
+        <form class="quote-form" id="cotizacionForm">
           <div class="field">
             <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+            <input id="nombre" type="text" placeholder="Tu nombre" required />
           </div>
 
           <div class="field">
             <label for="telefono">Teléfono</label>
-            <input id="telefono" name="telefono" type="tel" placeholder="+56 9 5301 2409" required />
+            <input id="telefono" type="tel" placeholder="+56 9 5301 2409" required />
           </div>
 
           <div class="field">
             <label for="email">Correo</label>
-            <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+            <input id="email" type="email" placeholder="correo@ejemplo.com" required />
           </div>
 
           <div class="field">
             <label for="servicio">Tipo de servicio</label>
-            <select id="servicio" name="servicio">
+            <select id="servicio">
               <option value="">Selecciona</option>
               <option>Remodelación interior o exterior</option>
               <option>Estructuras metálicas</option>
@@ -1173,17 +1168,17 @@
 
           <div class="field">
             <label for="ciudad">Ciudad</label>
-            <input id="ciudad" name="ciudad" type="text" placeholder="Santiago" />
+            <input id="ciudad" type="text" placeholder="Santiago" />
           </div>
 
           <div class="field">
             <label for="presupuesto">Presupuesto estimado</label>
-            <input id="presupuesto" name="presupuesto" type="text" placeholder="$1.000.000 - $3.000.000" />
+            <input id="presupuesto" type="text" placeholder="$1.000.000 - $3.000.000" />
           </div>
 
           <div class="field full">
             <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué necesitas..."></textarea>
+            <textarea id="mensaje" placeholder="Cuéntanos qué necesitas..."></textarea>
           </div>
 
           <div class="form-actions">
@@ -1193,22 +1188,20 @@
       </div>
     </section>
 
-    <div class="cta-band" id="contacto-cta">
+    <div class="cta-band">
       <div class="inner">
-        <span class="small">¿Listo para remodelar tu hogar en Santiago?</span>
-        <span class="sub">Hablemos de tu proyecto hoy mismo. Atención personalizada y presupuesto gratuito.</span>
-        <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="whats">
-          <span>◉</span> Hablar por WhatsApp
-        </a>
+        <span class="small">¿Listo para transformar tu espacio?</span>
+        <span class="sub">Hablemos de tu proyecto hoy mismo.</span>
+        <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." class="cta-link" target="_blank" rel="noopener">Hablar por WhatsApp</a>
       </div>
     </div>
 
-    <footer class="footer" id="nosotros">
+    <footer class="footer">
       <div class="footer-inner">
         <div>
           <div class="footer-title">Contacto</div>
           <ul class="footer-list">
-            <li>Santiago, Chile • Región Metropolitana</li>
+            <li>Santiago, Chile</li>
             <li><a href="mailto:construccionesgka@gmail.com">construccionesgka@gmail.com</a></li>
             <li><a href="tel:+56953012409">+56 9 5301 2409</a></li>
           </ul>
@@ -1223,42 +1216,43 @@
         </div>
 
         <div>
-          <div class="footer-title">Nosotros</div>
+          <div class="footer-title">Servicios</div>
           <ul class="footer-list">
-            <li>Especialistas en reformas</li>
-            <li>Fachadas, rejas y cortinas</li>
-            <li>Construcción comercial y residencial</li>
+            <li>Obra gruesa</li>
+            <li>Estructuras metálicas</li>
+            <li>Instalaciones</li>
+            <li>Remodelaciones</li>
           </ul>
         </div>
       </div>
 
-      <div class="bottom-line">
+      <div class="bottom">
         © 2024 GKA Construcciones — Todos los derechos reservados
       </div>
     </footer>
   </div>
 
   <script>
-    document.querySelectorAll(".slicer").forEach((slider) => {
+    document.querySelectorAll(".compare-slider").forEach((slider) => {
       const before = slider.querySelector(".before");
       const after = slider.querySelector(".after");
       const divider = slider.querySelector(".divider");
       const range = slider.querySelector("input[type='range']");
 
-      function updateSlider(value) {
+      function updateCompare(value) {
         const percent = Number(value);
         after.style.clipPath = `inset(0 0 0 ${percent}%)`;
         divider.style.left = `${percent}%`;
       }
 
-      range.addEventListener("input", (e) => {
-        updateSlider(e.target.value);
+      range.addEventListener("input", function (e) {
+        updateCompare(e.target.value);
       });
 
-      updateSlider(range.value);
+      updateCompare(range.value);
     });
 
-    document.getElementById("cotizacionForm").addEventListener("submit", function(e) {
+    document.getElementById("cotizacionForm").addEventListener("submit", function (e) {
       e.preventDefault();
 
       const nombre = document.getElementById("nombre").value.trim();
@@ -1286,8 +1280,8 @@
       const whatsappUrl = "https://wa.me/56953012409?text=" + encodeURIComponent(text);
       const mailtoUrl = "mailto:construccionesgka@gmail.com?subject=Cotización%20GKA%20Construcciones&body=" + encodeURIComponent(text);
 
-      const shouldSendToWhatsApp = confirm("¿Quieres enviar la cotización por WhatsApp?");
-      if (shouldSendToWhatsApp) {
+      const enviarPorWhatsApp = confirm("¿Quieres enviar la cotización por WhatsApp?");
+      if (enviarPorWhatsApp) {
         window.open(whatsappUrl, "_blank");
       } else {
         window.location.href = mailtoUrl;
