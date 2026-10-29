@@ -6,19 +6,17 @@
   <title>GKA Construcciones</title>
   <style>
     :root{
-      --bg: #e8eaee;
+      --bg: #edf0f3;
       --black: #111111;
-      --dark: #171717;
       --gold: #f3c316;
-      --gold-2: #d7a70d;
-      --text: #ffffff;
-      --muted: #a2a2a2;
+      --gold-dark: #d9a80d;
+      --white: #ffffff;
+      --text-dark: #111;
+      --text-soft: #555;
       --panel: #ffffff;
-      --light: #f4f4f4;
-      --input: #f7f7f7;
-      --line: rgba(255,255,255,.08);
-      --shadow: 0 18px 44px rgba(0,0,0,.12);
-      --soft-shadow: 0 10px 26px rgba(0,0,0,.08);
+      --muted: #a0a0a0;
+      --shadow: 0 18px 40px rgba(0,0,0,.12);
+      --soft-shadow: 0 12px 24px rgba(0,0,0,.08);
     }
 
     * { box-sizing: border-box; }
@@ -26,24 +24,24 @@
     body{
       margin: 0;
       background: var(--bg);
-      color: #111;
+      color: var(--text-dark);
       font-family: Arial, Helvetica, sans-serif;
     }
 
     a { text-decoration: none; }
     img { display: block; max-width: 100%; }
-    input, select, textarea, button { font: inherit; }
+    button, input, textarea, select { font: inherit; }
 
     .page{
-      width: min(1280px, calc(100% - 20px));
-      margin: 16px auto;
+      width: min(1280px, calc(100% - 18px));
+      margin: 18px auto;
       background: #fff;
       box-shadow: var(--shadow);
     }
 
     .topbar{
-      background: #101010;
-      padding: 14px 24px;
+      background: #111;
+      padding: 12px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -55,11 +53,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: 260px;
+      min-width: 220px;
     }
 
     .brand-mark{
-      width: 350px;
+      width: 340px;
       max-width: 100%;
       display: flex;
       align-items: center;
@@ -69,15 +67,15 @@
     .brand-mark img{
       width: 100%;
       height: auto;
-      object-fit: contain;
       display: block;
-      filter: drop-shadow(0 2px 10px rgba(255,255,255,.1));
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,.08));
     }
 
     .nav{
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       gap: 28px;
       flex-wrap: wrap;
       margin: 0 auto;
@@ -87,65 +85,65 @@
       color: #fff;
       font-size: 15px;
       font-weight: 800;
-      letter-spacing: .04em;
       text-transform: uppercase;
-      transition: .2s ease;
+      letter-spacing: .04em;
     }
 
     .nav a:hover{
       color: var(--gold);
     }
 
-    .header-cta{
+    .header-btn{
       background: var(--gold);
       color: #111;
       border-radius: 999px;
       padding: 10px 18px;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       font-size: 13px;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: .04em;
+      letter-spacing: .05em;
       white-space: nowrap;
     }
 
-    .header-cta .icon{
-      width: 22px;
-      height: 22px;
+    .header-btn .icon{
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: #111;
       color: var(--gold);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 900;
     }
 
     .hero{
-      background: #0f0f0f;
+      background: #111;
       color: #fff;
       padding: 0;
     }
 
     .hero-inner{
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      align-items: center;
-      min-height: 540px;
-      padding: 0 18px;
+      grid-template-columns: 1.12fr 1fr;
+      min-height: 520px;
       gap: 22px;
+      align-items: center;
+      padding: 0 18px;
     }
 
     .hero-copy{
-      padding: 20px 0 24px 10px;
+      padding: 20px 0 28px 10px;
     }
 
     .hero-copy h1{
       margin: 0;
-      font-size: clamp(2.5rem, 4vw, 5.2rem);
+      font-size: clamp(2.6rem, 4vw, 5.1rem);
       line-height: .9;
       letter-spacing: -0.08em;
       text-transform: uppercase;
@@ -155,14 +153,14 @@
 
     .hero-copy .sub{
       margin-top: 22px;
+      max-width: 620px;
       color: #d9d9d9;
       font-size: 18px;
-      line-height: 1.5;
-      max-width: 620px;
+      line-height: 1.55;
     }
 
     .hero-actions{
-      margin-top: 28px;
+      margin-top: 30px;
       display: flex;
       align-items: center;
       gap: 14px;
@@ -172,33 +170,31 @@
     .btn-primary{
       background: var(--gold);
       color: #111;
-      border-radius: 12px;
       padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-weight: 900;
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: .04em;
       border: none;
     }
 
     .btn-secondary{
       background: transparent;
-      border: 1px solid rgba(255,255,255,.2);
       color: #fff;
-      border-radius: 12px;
       padding: 14px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.2);
       font-weight: 700;
-      font-size: 15px;
     }
 
     .hero-meta{
       margin-top: 28px;
       display: flex;
       flex-wrap: wrap;
-      gap: 18px 20px;
+      gap: 18px 22px;
       color: #d9d9d9;
       font-size: 12px;
       font-weight: 700;
@@ -242,18 +238,17 @@
       min-height: 180px;
       border-radius: 16px;
       overflow: hidden;
-      background: linear-gradient(135deg, #222, #101010);
-      box-shadow: var(--soft-shadow);
-      border: 1px solid rgba(255,255,255,.06);
       background-size: cover;
       background-position: center;
+      box-shadow: var(--soft-shadow);
+      border: 1px solid rgba(255,255,255,.06);
     }
 
     .service-card::before{
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.15));
+      background: linear-gradient(to top, rgba(0,0,0,.78), rgba(0,0,0,.12));
     }
 
     .service-card span{
@@ -263,26 +258,26 @@
       z-index: 1;
       font-size: 12px;
       font-weight: 900;
+      color: #fff;
       text-transform: uppercase;
       letter-spacing: .06em;
-      color: #fff;
-      max-width: 80%;
       line-height: 1.2;
+      max-width: 80%;
     }
 
-    .before-after{
+    .beforeafter{
       background: #f4f4f3;
-      padding: 26px 20px 10px;
+      padding: 28px 20px 10px;
     }
 
     .section-head{
       text-align: center;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .section-head h2{
       margin: 0;
-      font-size: clamp(2.3rem, 4vw, 4rem);
+      font-size: clamp(2.2rem, 3vw, 4rem);
       font-weight: 900;
       letter-spacing: -0.06em;
       text-transform: uppercase;
@@ -294,21 +289,21 @@
       width: 130px;
       height: 4px;
       background: var(--gold);
-      margin: 10px auto 0;
       border-radius: 999px;
+      margin: 10px auto 0;
     }
 
     .section-head p{
       margin: 16px auto 0;
-      color: #555;
+      color: #4e4e4e;
       font-size: 17px;
-      max-width: 760px;
       line-height: 1.5;
+      max-width: 780px;
     }
 
     .compare-grid{
       max-width: 1180px;
-      margin: 24px auto 0;
+      margin: 28px auto 0;
       display: grid;
       grid-template-columns: repeat(3, minmax(280px, 1fr));
       gap: 22px;
@@ -339,10 +334,7 @@
       background-position: center;
     }
 
-    .compare-slider .before{
-      z-index: 1;
-    }
-
+    .compare-slider .before{ z-index: 1; }
     .compare-slider .after{
       z-index: 2;
       clip-path: inset(0 0 0 50%);
@@ -354,7 +346,7 @@
       bottom: 0;
       left: 50%;
       width: 3px;
-      background: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.92);
       z-index: 4;
       transform: translateX(-50%);
       box-shadow: 0 0 0 1px rgba(0,0,0,.12);
@@ -379,8 +371,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      font-size: 17px;
       font-weight: 900;
-      font-size: 18px;
       color: #111;
     }
 
@@ -424,16 +416,12 @@
       padding: 36px 18px 28px;
     }
 
-    .gallery-section .section-head h2{
-      color: #fff;
-    }
-
     .gallery-section .section-head p{
       color: #d6d6d6;
     }
 
     .gallery-grid{
-      max-width: 1160px;
+      max-width: 1180px;
       margin: 28px auto 0;
       display: grid;
       grid-template-columns: repeat(4, minmax(220px, 1fr));
@@ -442,7 +430,7 @@
 
     .gallery-card{
       background: #111;
-      border: 1px solid rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 12px 24px rgba(0,0,0,.12);
@@ -472,80 +460,9 @@
       line-height: 1.5;
     }
 
-    .social-section{
-      background: #f3f3f3;
-      padding: 42px 18px 28px;
-    }
-
-    .social-grid{
-      max-width: 1100px;
-      margin: 24px auto 0;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(300px, 1fr));
-      gap: 22px;
-    }
-
-    .social-card{
-      background: #fff;
-      border: 1px solid rgba(0,0,0,.06);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--soft-shadow);
-    }
-
-    .social-visual{
-      position: relative;
-      height: 260px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .social-visual::before{
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.58), rgba(0,0,0,.12));
-    }
-
-    .social-chip{
-      position: absolute;
-      left: 16px;
-      bottom: 16px;
-      z-index: 1;
-      background: rgba(0,0,0,.25);
-      border: 1px solid rgba(255,255,255,.18);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 8px 12px;
-      border-radius: 999px;
-      backdrop-filter: blur(4px);
-    }
-
-    .social-info{
-      padding: 18px 18px 20px;
-    }
-
-    .social-info h3{
-      margin: 0 0 10px;
-      font-size: 30px;
-      line-height: 1.1;
-      letter-spacing: -.05em;
-      font-weight: 900;
-    }
-
-    .social-info p{
-      margin: 0;
-      color: #4a4a4a;
-      line-height: 1.6;
-      font-size: 15px;
-    }
-
     .quote-section{
       background: #111;
-      padding: 40px 18px 52px;
+      padding: 42px 18px 52px;
     }
 
     .quote-card{
@@ -562,18 +479,18 @@
       margin: 0;
       text-align: center;
       color: #fff;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      text-transform: uppercase;
+      font-size: clamp(2.2rem, 4vw, 3.1rem);
       letter-spacing: -0.06em;
+      text-transform: uppercase;
       font-weight: 900;
     }
 
     .quote-card .lead{
       margin: 12px auto 20px;
       text-align: center;
+      max-width: 660px;
       color: #d6d6d6;
       font-size: 15px;
-      max-width: 680px;
       line-height: 1.6;
     }
 
@@ -605,7 +522,7 @@
     .field select,
     .field textarea{
       width: 100%;
-      background: var(--input);
+      background: #f7f7f7;
       border: 1px solid rgba(255,255,255,.08);
       border-radius: 10px;
       padding: 14px 14px;
@@ -644,12 +561,10 @@
       text-transform: uppercase;
       letter-spacing: .04em;
       cursor: pointer;
-      transition: .2s ease;
     }
 
     .submit-btn:hover{
-      background: var(--gold-2);
-      transform: translateY(-1px);
+      background: var(--gold-dark);
     }
 
     .cta-band{
@@ -660,11 +575,11 @@
     }
 
     .cta-band .inner{
-      max-width: 1150px;
+      max-width: 1120px;
       margin: 0 auto;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
     }
@@ -677,9 +592,9 @@
     }
 
     .cta-band .sub{
+      font-size: 15px;
       font-weight: 700;
       opacity: .85;
-      font-size: 15px;
     }
 
     .cta-band .cta-link{
@@ -698,8 +613,8 @@
 
     .footer{
       background: #111;
-      color: #d3d3d3;
-      padding: 30px 18px 18px;
+      color: #d4d4d4;
+      padding: 28px 18px 18px;
     }
 
     .footer-inner{
@@ -711,7 +626,7 @@
     }
 
     .footer-title{
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: #fff;
       text-transform: uppercase;
       font-size: 16px;
@@ -723,8 +638,8 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      color: #d9d9d9;
       line-height: 1.9;
+      color: #d9d9d9;
       font-size: 14px;
     }
 
@@ -732,18 +647,14 @@
       color: #d9d9d9;
     }
 
-    .footer-list a:hover{
-      color: var(--gold);
-    }
-
     .bottom{
       max-width: 1120px;
       margin: 18px auto 0;
       border-top: 1px solid rgba(255,255,255,.08);
       padding-top: 16px;
-      text-align: center;
+      color: #b4b4b4;
       font-size: 12px;
-      color: #b9b9b9;
+      text-align: center;
     }
 
     @media (max-width: 1100px){
@@ -755,10 +666,6 @@
         grid-template-columns: repeat(2, minmax(220px, 1fr));
       }
 
-      .social-grid{
-        grid-template-columns: 1fr;
-      }
-
       .footer-inner{
         grid-template-columns: 1fr;
       }
@@ -767,7 +674,7 @@
     @media (max-width: 900px){
       .hero-inner{
         grid-template-columns: 1fr;
-        padding-bottom: 26px;
+        padding-bottom: 24px;
       }
 
       .hero-copy{
@@ -792,10 +699,6 @@
         justify-content: center;
       }
 
-      .hero-visual{
-        min-height: 0;
-      }
-
       .topbar{
         flex-wrap: wrap;
       }
@@ -811,20 +714,20 @@
       }
 
       .brand-mark{
-        width: 250px;
+        width: 240px;
       }
 
       .nav{
-        gap: 14px 18px;
+        gap: 12px 16px;
       }
 
       .nav a{
         font-size: 11px;
       }
 
-      .header-cta{
+      .header-btn{
         font-size: 11px;
-        padding: 9px 14px;
+        padding: 8px 14px;
       }
 
       .compare-grid{
@@ -850,7 +753,7 @@
     <header class="topbar">
       <div class="brand">
         <div class="brand-mark">
-          <img src="logo%20GKA.jpg" alt="GKA Construcciones" />
+          <img src="logogka.jpg" alt="GKA Construcciones" onerror="this.onerror=null;this.src='logo%20GKA.jpg';">
         </div>
       </div>
 
@@ -861,7 +764,7 @@
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." class="header-cta" target="_blank" rel="noopener">
+      <a href="https://wa.me/56953012409?text=Hola%20GKA%20Construcciones%2C%20quiero%20cotizar%20un%20proyecto." class="header-btn" target="_blank" rel="noopener">
         <span class="icon">W</span>
         WhatsApp
       </a>
@@ -899,15 +802,12 @@
             <div class="service-card" style="background-image:url('antes1.jpeg');">
               <span>Obra gruesa</span>
             </div>
-
             <div class="service-card" style="background-image:url('antes2.jpeg');">
               <span>Estructuras metálicas</span>
             </div>
-
             <div class="service-card" style="background-image:url('antes3.jpeg');">
               <span>Instalaciones</span>
             </div>
-
             <div class="service-card" style="background-image:url('antes4.jpeg');">
               <span>Remodelaciones</span>
             </div>
@@ -916,7 +816,7 @@
       </div>
     </section>
 
-    <section class="before-after" id="servicios">
+    <section class="beforeafter" id="servicios">
       <div class="section-head">
         <h2>Antes &amp; después</h2>
         <p>Detalle visual de algunos de nuestros proyectos más representativos.</p>
@@ -930,7 +830,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="50" aria-label="Antes y después 1" />
+            <input type="range" min="0" max="100" value="50" aria-label="Antes y después 1">
           </div>
         </div>
 
@@ -941,7 +841,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="52" aria-label="Antes y después 2" />
+            <input type="range" min="0" max="100" value="52" aria-label="Antes y después 2">
           </div>
         </div>
 
@@ -952,7 +852,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="54" aria-label="Antes y después 3" />
+            <input type="range" min="0" max="100" value="54" aria-label="Antes y después 3">
           </div>
         </div>
 
@@ -963,7 +863,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="58" aria-label="Antes y después 4" />
+            <input type="range" min="0" max="100" value="58" aria-label="Antes y después 4">
           </div>
         </div>
 
@@ -974,7 +874,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="60" aria-label="Antes y después 5" />
+            <input type="range" min="0" max="100" value="60" aria-label="Antes y después 5">
           </div>
         </div>
 
@@ -985,7 +885,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="62" aria-label="Antes y después 6" />
+            <input type="range" min="0" max="100" value="62" aria-label="Antes y después 6">
           </div>
         </div>
 
@@ -996,7 +896,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="64" aria-label="Antes y después 7" />
+            <input type="range" min="0" max="100" value="64" aria-label="Antes y después 7">
           </div>
         </div>
 
@@ -1007,7 +907,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="66" aria-label="Antes y después 8" />
+            <input type="range" min="0" max="100" value="66" aria-label="Antes y después 8">
           </div>
         </div>
 
@@ -1018,7 +918,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="68" aria-label="Antes y después 9" />
+            <input type="range" min="0" max="100" value="68" aria-label="Antes y después 9">
           </div>
         </div>
 
@@ -1029,7 +929,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="70" aria-label="Antes y después 10" />
+            <input type="range" min="0" max="100" value="70" aria-label="Antes y después 10">
           </div>
         </div>
 
@@ -1040,7 +940,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="72" aria-label="Antes y después 11" />
+            <input type="range" min="0" max="100" value="72" aria-label="Antes y después 11">
           </div>
         </div>
 
@@ -1051,7 +951,7 @@
             <div class="divider"></div>
             <span class="tag before">Antes</span>
             <span class="tag after">Después</span>
-            <input type="range" min="0" max="100" value="74" aria-label="Antes y después 12" />
+            <input type="range" min="0" max="100" value="74" aria-label="Antes y después 12">
           </div>
         </div>
       </div>
@@ -1068,7 +968,7 @@
           <div class="image" style="background-image:url('antes1.jpeg');"></div>
           <div class="meta">
             <h3>Remodelación integral</h3>
-            <p>Renovación completa con foco en funcionalidad, modernización y calidad.</p>
+            <p>Renovación completa con foco en funcionalidad y modernización.</p>
           </div>
         </article>
 
@@ -1084,46 +984,17 @@
           <div class="image" style="background-image:url('antes7.jpeg');"></div>
           <div class="meta">
             <h3>Estructuras</h3>
-            <p>Trabajos de obra gruesa y soportes con altos estándares de resistencia.</p>
+            <p>Obra gruesa y soportes con altos estándares de resistencia.</p>
           </div>
         </article>
 
         <article class="gallery-card">
           <div class="image" style="background-image:url('antes9.jpeg');"></div>
           <div class="meta">
-            <h3>Revestimientos</h3>
-            <p>Acabados de alto nivel para espacios modernos y duraderos.</p>
+            <h3>Acabados</h3>
+            <p>Revestimientos y terminaciones para espacios modernos y duraderos.</p>
           </div>
         </article>
-      </div>
-    </section>
-
-    <section class="social-section">
-      <div class="section-head">
-        <h2>Redes sociales</h2>
-        <p>Diseño visual para contenido en Instagram y Facebook con estilo profesional y moderno.</p>
-      </div>
-
-      <div class="social-grid">
-        <div class="social-card">
-          <div class="social-visual" style="background-image:url('antes6.jpeg');">
-            <span class="social-chip">Instagram</span>
-          </div>
-          <div class="social-info">
-            <h3>Instagram</h3>
-            <p>Contenido visual para promocionar remodelaciones, servicios y proyectos ejecutados con estilo y calidad.</p>
-          </div>
-        </div>
-
-        <div class="social-card">
-          <div class="social-visual" style="background-image:url('antes8.jpeg');">
-            <span class="social-chip">Facebook</span>
-          </div>
-          <div class="social-info">
-            <h3>Facebook</h3>
-            <p>Publicaciones para reforzar la confianza del cliente con trabajos reales, acabados profesionales y atención cercana.</p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1135,17 +1006,17 @@
         <form class="quote-form" id="cotizacionForm">
           <div class="field">
             <label for="nombre">Nombre</label>
-            <input id="nombre" type="text" placeholder="Tu nombre" required />
+            <input id="nombre" type="text" placeholder="Tu nombre" required>
           </div>
 
           <div class="field">
             <label for="telefono">Teléfono</label>
-            <input id="telefono" type="tel" placeholder="+56 9 5301 2409" required />
+            <input id="telefono" type="tel" placeholder="+56 9 5301 2409" required>
           </div>
 
           <div class="field">
             <label for="email">Correo</label>
-            <input id="email" type="email" placeholder="correo@ejemplo.com" required />
+            <input id="email" type="email" placeholder="correo@ejemplo.com" required>
           </div>
 
           <div class="field">
@@ -1168,12 +1039,12 @@
 
           <div class="field">
             <label for="ciudad">Ciudad</label>
-            <input id="ciudad" type="text" placeholder="Santiago" />
+            <input id="ciudad" type="text" placeholder="Santiago">
           </div>
 
           <div class="field">
             <label for="presupuesto">Presupuesto estimado</label>
-            <input id="presupuesto" type="text" placeholder="$1.000.000 - $3.000.000" />
+            <input id="presupuesto" type="text" placeholder="$1.000.000 - $3.000.000">
           </div>
 
           <div class="field full">
@@ -1245,14 +1116,14 @@
         divider.style.left = `${percent}%`;
       }
 
-      range.addEventListener("input", function (e) {
+      range.addEventListener("input", function(e){
         updateCompare(e.target.value);
       });
 
       updateCompare(range.value);
     });
 
-    document.getElementById("cotizacionForm").addEventListener("submit", function (e) {
+    document.getElementById("cotizacionForm").addEventListener("submit", function(e){
       e.preventDefault();
 
       const nombre = document.getElementById("nombre").value.trim();
@@ -1276,7 +1147,6 @@
       ];
 
       const text = lines.join("\n");
-
       const whatsappUrl = "https://wa.me/56953012409?text=" + encodeURIComponent(text);
       const mailtoUrl = "mailto:construccionesgka@gmail.com?subject=Cotización%20GKA%20Construcciones&body=" + encodeURIComponent(text);
 
